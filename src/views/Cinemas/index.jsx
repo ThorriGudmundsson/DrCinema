@@ -3,6 +3,7 @@ import {
   View, TouchableHighlight, Text,
 } from 'react-native';
 import { NavigationEvents } from 'react-navigation';
+import { getAllCinemas } from '../../services/cinemaService';
 // import PropTypes from 'prop-types';
 import data from '../../resources/data.json';
 // import { AntDesign } from '@expo/vector-icons';
@@ -20,6 +21,7 @@ class Cinemas extends React.Component {
   }
 
   componentDidMount() {
+    const cinemas =
     this.setState({
       cinemas: data.cinemas,
     });
