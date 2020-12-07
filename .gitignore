@@ -1,6 +1,8 @@
 node_modules/**/*
 .expo/*
 npm-debug.*
+.expo-shared/
+.idea/*
 *.jks
 *.p8
 *.p12
@@ -8,6 +10,8 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+yarn.lock
+.vscode/*
 
 # macOS
 .DS_Store
