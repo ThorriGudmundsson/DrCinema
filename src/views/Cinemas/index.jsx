@@ -5,7 +5,7 @@ import {
 import { NavigationEvents } from 'react-navigation';
 import { getAllCinemas } from '../../services/cinemaService';
 // import PropTypes from 'prop-types';
-import data from '../../resources/data.json';
+// import data from '../../resources/data.json';
 // import { AntDesign } from '@expo/vector-icons';
 // import { SearchBar } from 'react-native-elements';
 // import ContactList from '../../components/Contacts/ContactList';
@@ -21,20 +21,21 @@ class Cinemas extends React.Component {
   }
 
   componentDidMount() {
-    const cinemas =
+    const cinemas = getAllCinemas();
     this.setState({
-      cinemas: data.cinemas,
+      cinemas,
     });
   }
 
   render() {
+    const firstCinema = this.state.cinemas[0];
     return (
       <View>
         <Text>
-          Hello from Cinemas view!
+          {firstCinema}
         </Text>
       </View>
-    )
+    );
   }
 }
 
