@@ -11,4 +11,12 @@ export async function getAllCinemas() {
   }).then((cinemas) => cinemas.json()).then((cinemas) => cinemas);
 }
 
-export default getAllCinemas;
+export const getCinemaById = async (id) => {
+  const cinemas = await getAllCinemas();
+  for (let i = 1; i < cinemas.length + 1; i += 1) {
+    if (cinemas[i].id === id) {
+      return cinemas[i];
+    }
+  }
+  return undefined;
+};

@@ -7,14 +7,14 @@ export default StyleSheet.create({
     margin: 10,
   },
   thumbnailName: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#ffff',
     flexDirection: 'column',
     margin: 8,
   },
   thumbnailText: {
-    fontSize: 12,
+    fontSize: 16,
     fontWeight: 'normal',
     color: '#7DFDFE',
     flexDirection: 'column',
