@@ -20,7 +20,7 @@ const CinemaThumbnail = ({
         <Text style={styles.thumbnailName}>{name}</Text>
         <Text
           style={styles.thumbnailText}
-          onPress={() => Linking.openURL(website)}
+          onPress={() => { Linking.openURL(`https://${website}`); }}
         >
           {website}
         </Text>
@@ -29,13 +29,13 @@ const CinemaThumbnail = ({
   </TouchableOpacity>
 );
 
-// CinemaThumbnail.propTypes = {
-//   id: PropTypes.number.isRequired,
-//   name: PropTypes.string.isRequired,
-//   website: PropTypes.string.isRequired,
-//   navigation: PropTypes.shape({
-//     navigate: PropTypes.func.isRequired,
-//   }).isRequired,
-// };
+CinemaThumbnail.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  website: PropTypes.string.isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default withNavigation(CinemaThumbnail);
