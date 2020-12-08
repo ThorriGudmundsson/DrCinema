@@ -10,12 +10,9 @@ const authorizeUser = async () => {
     method: 'POST',
     headers: {
       Accept: 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      username: '',
-      password: '',
-    }),
+    body: JSON.stringify({ username: 'Thorri', password: 'supriseeldfjall8' }),
   });
   console.log(await response.json());
   console.log('THJTHT');
