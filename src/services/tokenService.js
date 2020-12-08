@@ -11,7 +11,7 @@ const authorizeUser = async () => {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ username: 'Thorri', password: 'DrCinema3' }),
+    body: JSON.stringify({ username: 'TheGroke11', password: 'aparass92' }),
   });
   const data = await response.json();
   await SecureStore.setItemAsync('user_token', data.token);
