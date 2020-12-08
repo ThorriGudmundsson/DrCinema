@@ -17,19 +17,17 @@ class CinemaDetail extends React.Component {
   }
 
   async componentDidMount() {
-    const { cinemaId } = await this.props.navigation.state.params.id;
-    // console.log(this.props.navigation.state.params.id);
-    const cinema = await getCinemaById(cinemaId);
-    // console.log(cinema);
+    const cinema = await getCinemaById(this.props.navigation.state.params.id);
     this.setState({
       cinema,
     });
   }
 
   render() {
+    const { cinema } = this.state;
     return (
       <View>
-        <Text>Hér kemur bíohús</Text>
+        <Text>{cinema.name}</Text>
       </View>
     );
   }

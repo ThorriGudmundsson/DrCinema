@@ -13,12 +13,8 @@ export async function getAllCinemas() {
 
 export const getCinemaById = async (id) => {
   const cinemas = await getAllCinemas();
-  // console.log(cinemas.length);
-  // console.log(typeof id);
   for (let i = 1; i < cinemas.length + 1; i += 1) {
-    // console.log(cinemas[i].id);
     if (cinemas[i].id === id) {
-      // console.log('ATATATA');
       return cinemas[i];
     }
   }
