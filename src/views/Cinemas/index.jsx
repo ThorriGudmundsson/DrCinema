@@ -1,16 +1,12 @@
 import React from 'react';
 import {
-  View, TouchableHighlight, Text,
+  View,
 } from 'react-native';
 import { NavigationEvents } from 'react-navigation';
-import { getAllCinemas } from '../../services/cinemaService';
+// import { getAllCinemas } from '../../services/cinemaService';
 // import PropTypes from 'prop-types';
-// import data from '../../resources/data.json';
-// import { AntDesign } from '@expo/vector-icons';
-// import { SearchBar } from 'react-native-elements';
-// import ContactList from '../../components/Contacts/ContactList';
-// import { getAllContacts, sortContacts } from '../../services/contactServices';
-// import styles from './styles';
+import data from '../../resources/data.json';
+import CinemaList from '../../components/CinemaList';
 
 class Cinemas extends React.Component {
   constructor(props) {
@@ -20,20 +16,20 @@ class Cinemas extends React.Component {
     };
   }
 
-  componentDidMount() {
-    const cinemas = getAllCinemas();
+  async componentDidMount() {
+    // const cinemas = await getAllCinemas();
     this.setState({
-      cinemas,
+      cinemas: data.cinemas,
     });
   }
 
   render() {
-    const firstCinema = this.state.cinemas[0];
+    // const { cinemas } = this.state;
     return (
       <View>
-        <Text>
-          {firstCinema}
-        </Text>
+        <CinemaList
+          cinemas={this.state.cinemas}
+        />
       </View>
     );
   }
