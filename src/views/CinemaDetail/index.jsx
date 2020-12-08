@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View,
+  View, Text,
 } from 'react-native';
 import { NavigationEvents } from 'react-navigation';
 // import { getAllCinemas } from '../../services/cinemaService';
@@ -11,22 +11,22 @@ class CinemaDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cinemas: [],
+      cinema: {},
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      cinemas: data.cinemas,
-    });
-  }
+  // componentDidMount() {
+  //   this.setState({
+  //     cinemas: data.cinemas,
+  //   });
+  // }
 
   render() {
     return (
       <View>
-        <CinemaList
-          cinemas={this.state.cinemas}
-        />
+        <Text>
+          Hello from Cinema Detail view!
+        </Text>
       </View>
     );
   }
