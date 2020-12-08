@@ -6,8 +6,39 @@ import CinemaDetail from '../views/CinemaDetail';
 // import UpcomingMovies from '../views/UpcomingMovies';
 
 const StackNavigator = createStackNavigator({
-  Cinemas,
-  CinemaDetail,
+  Cinemas: {
+    screen: Cinemas,
+    navigationOptions: {
+      title: 'Kvikmyndahúsin',
+      headerStyle: {
+        backgroundColor: '#800517',
+
+
+      },
+      headerTintColor: '#7DFDFE',
+      headerTitleStyle: {
+        fontWeight: 'normal',
+      },
+
+    },
+  },
+  CinemaDetail: {
+    screen: CinemaDetail,
+    navigationOptions: {
+      title: 'Komdu í bío',
+      headerStyle: {
+        backgroundColor: '#333',
+
+
+      },
+      headerTintColor: '#7DFDFE',
+      headerTitleStyle: {
+        fontWeight: 'normal',
+      },
+
+    },
+  },
+
   // Movies,
   // UpcomingMovies,
 });

@@ -1,32 +1,30 @@
 import React from 'react';
 import {
-  View,
+  View, Text,
 } from 'react-native';
 import { NavigationEvents } from 'react-navigation';
 // import { getAllCinemas } from '../../services/cinemaService';
 // import PropTypes from 'prop-types';
-import data from '../../resources/data.json';
+//import data from '../../resources/data.json';
 
 class CinemaDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cinemas: [],
+      cinema: {},
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      cinemas: data.cinemas,
-    });
-  }
+  // componentDidMount() {
+  //   this.setState({
+  //     cinemas: data.cinemas,
+  //   });
+  // }
 
   render() {
     return (
       <View>
-        <CinemaList
-          cinemas={this.state.cinemas}
-        />
+        <Text>Hér kemur bíohús</Text>
       </View>
     );
   }
