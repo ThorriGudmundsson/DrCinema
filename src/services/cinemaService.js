@@ -1,6 +1,6 @@
 import { getJwtToken } from './tokenService';
 
-const cinemaEndpoint = 'http://api.kvikmyndir.is/theaters';
+const cinemaEndpoint = 'http://api.kvikmyndir.is/authenticate';
 
 export const getAllCinemas = async () => fetch(cinemaEndpoint, {
   method: 'GET',
