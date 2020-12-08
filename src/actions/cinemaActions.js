@@ -1,4 +1,4 @@
-import { getAllCinemas } from '../services/cinemaService';
+import { getAllCinemas, getCinemaById } from '../services/cinemaService';
 import * as constants from '../constants';
 
 const getAllCinemasSuccess = (allCinemas) => ({
@@ -6,7 +6,12 @@ const getAllCinemasSuccess = (allCinemas) => ({
   payload: allCinemas,
 });
 
-const getAllCinemasAction = () => async (dispatch) => {
+const getCinemaByIdActionSuccess = (cinema) => ({
+  type: constants.GET_CINEMA,
+  payload: cinema,
+});
+
+export const getAllCinemasAction = () => async () => {
   try {
     const allCinemas = await getAllCinemas();
     dispatch(getAllCinemasSuccess(allCinemas));
@@ -15,4 +20,11 @@ const getAllCinemasAction = () => async (dispatch) => {
   }
 };
 
-export default getAllCinemasAction;
+export const getCinemaByIdAction = async (id, cinemas) => {
+  try {
+    const cinema = await getCinemaById(id, cinemas)
+    dispatch(getCinemaByIdActionSuccess(cinema));
+  } catch (e) {
+    // TODO: Should dispatch an error action
+  }
+};
