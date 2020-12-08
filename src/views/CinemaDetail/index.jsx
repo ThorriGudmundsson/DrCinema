@@ -5,7 +5,7 @@ import {
 import { NavigationEvents } from 'react-navigation';
 // import { getAllCinemas } from '../../services/cinemaService';
 // import PropTypes from 'prop-types';
-import data from '../../resources/data.json';
+//import data from '../../resources/data.json';
 
 class CinemaDetail extends React.Component {
   constructor(props) {
@@ -24,9 +24,7 @@ class CinemaDetail extends React.Component {
   render() {
     return (
       <View>
-        <Text>
-          Hello from Cinema Detail view!
-        </Text>
+        <Text>Hér kemur bíohús</Text>
       </View>
     );
   }
