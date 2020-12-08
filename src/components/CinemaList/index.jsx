@@ -5,7 +5,7 @@ import styles from './styles';
 import CinemaThumbnail from '../CinemaThumbnail';
 
 const CinemaList = ({ cinemas }) => (
-  <View style={styles.listContainer}>
+  <View style={{ backgroundColor: '#3D3C3A' }}>
     <FlatList
       numColumns={1}
       data={cinemas.sort((a, b) => a.name.localeCompare(b.name))}
@@ -25,16 +25,16 @@ const CinemaList = ({ cinemas }) => (
   </View>
 );
 
-CinemaList.propTypes = {
-  cinemas: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
-    website: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    city: PropTypes.string.isRequired,
-    address: PropTypes.string.isRequired,
-  })).isRequired,
-};
+// CinemaList.propTypes = {
+//   cinemas: PropTypes.arrayOf(PropTypes.shape({
+//     id: PropTypes.number.isRequired,
+//     name: PropTypes.string.isRequired,
+//     phone: PropTypes.string.isRequired,
+//     website: PropTypes.string.isRequired,
+//     description: PropTypes.string.isRequired,
+//     city: PropTypes.string.isRequired,
+//     address: PropTypes.string.isRequired,
+//   })).isRequired,
+// };
 
 export default CinemaList;

@@ -16,7 +16,7 @@ class Cinemas extends React.Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     // const cinemas = await getAllCinemas();
     this.setState({
       cinemas: data.cinemas,
@@ -25,6 +25,11 @@ class Cinemas extends React.Component {
 
   render() {
     // const { cinemas } = this.state;
+    // const firstCinema = this.state.cinemas[0];
+    // console.log(this.state.cinemas[0]);
+    // console.log(firstCinema);
+    // console.log(cinemas[0].name);
+    // console.log(firstCinema['address\t']);
     return (
       <View>
         <CinemaList
