@@ -2,11 +2,10 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Cinemas from '../views/Cinemas';
 import CinemaDetail from '../views/CinemaDetail';
-import {  } from '../../App';
+// import {  } from '../../App';
 
 import Movies from '../views/Movies';
 import UpcomingMovies from '../views/UpcomingMovies';
-
 
 const StackNavigator = createStackNavigator({
   Cinemas: {
@@ -30,7 +29,6 @@ const StackNavigator = createStackNavigator({
       title: 'Komdu í bío',
       headerStyle: {
         backgroundColor: '#333',
-
 
       },
       headerTintColor: '#7DFDFE',
