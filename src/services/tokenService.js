@@ -1,7 +1,7 @@
 import * as SecureStore from 'expo-secure-store';
 import jwtDecode from 'jwt-decode';
 
-const authenticateEndpoint = 'https://api.kvikmyndir.is/theaters';
+const authenticateEndpoint = 'https://api.kvikmyndir.is/authenticate';
 
 // Authorize user and return new 24h token
 const authorizeUser = async () => {
