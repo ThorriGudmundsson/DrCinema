@@ -1,11 +1,15 @@
 import { StyleSheet } from 'react-native';
 
+
 export default StyleSheet.create({
-  HamburgerContainer: {
+  /*HamburgerContainer: {
+    // not in use because of dinamic color
     position: 'absolute', // put the menu on top and over the navigation
-    top: 16,
+    top: -24,
     right: 0,
-  },
+    backgroundColor: '#800517',
+    borderBottomLeftRadius: 36,
+  },*/
 
   HamburgerIcon: {
     padding: 20, // using this so clicable area are biggers
@@ -23,7 +27,7 @@ export default StyleSheet.create({
 
   menuPosition:{
     position: 'absolute', // put the menu on top and over the navigation
-    top: 50,
+    top: 100,
     right: 0,
   },
   menuButton: {

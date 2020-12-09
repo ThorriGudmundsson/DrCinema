@@ -1,10 +1,12 @@
 import React from 'react';
+import {  } from '../UpcomingMovies/index';
 import {
   View, Text,
 } from 'react-native';
 // import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
 import { getCinemaById } from '../../services/cinemaService';
+import Hamburger from '../../components/Hamburger';
 
 class CinemaDetail extends React.Component {
   constructor(props) {
@@ -28,6 +30,10 @@ class CinemaDetail extends React.Component {
     return (
       <View>
         <Text>{cinema.name}</Text>
+        <Hamburger
+          navigation={this.props.navigation}
+          themecolor='#333'
+        />
       </View>
     );
   }

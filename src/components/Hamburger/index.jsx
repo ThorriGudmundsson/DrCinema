@@ -12,23 +12,31 @@ import styles from './styles';
 class Hamburger extends React.Component {
   constructor(props) {
     super(props);
-    // console.log(props)
+    console.log(props.themecolor);
     this.state = {
       menuIsOpen: false,
+      navigate: this.props.navigation.navigate,
+      themecolor: props.themecolor,
     };
   }
 
 
     render() {
 
-  const {menuIsOpen} = this.state;
+  const {menuIsOpen, navigate, themecolor} = this.state;
+  console.log(themecolor)
   return (
     <View
-      style={styles.HamburgerContainer}
+      style={{position: 'absolute', // put the menu on top and over the navigation
+          top: -24,
+          right: 0,
+          backgroundColor: themecolor,
+          borderBottomLeftRadius: 36,}}
     >
       <TouchableOpacity
         activeOpacity={0.7}
         onPress={() => this.setState({ menuIsOpen: !menuIsOpen })}
+
       >
         <Ionicons name="ios-menu" style={styles.HamburgerIcon} />
       </TouchableOpacity>
@@ -46,7 +54,7 @@ class Hamburger extends React.Component {
           <TouchableOpacity
             activeOpacity={0.9}
             style={styles.menuButton}
-            onPress={() => { this.setState({ menuIsOpen: false }); console.log('hohoh')}}
+            onPress={() => { this.setState({ menuIsOpen: false }); navigate('Cinemas'); }}
           >
             <Text> Kvikmyndahúsin </Text>
           </TouchableOpacity>
@@ -54,7 +62,7 @@ class Hamburger extends React.Component {
           <TouchableOpacity
             activeOpacity={0.9}
             style={styles.menuButton}
-            onPress={() => { this.setState({ menuIsOpen: false }); console.log('Það eru jólinn')}}
+            onPress={() => { this.setState({ menuIsOpen: false }); navigate('Movies'); }}
           >
             <Text> Myndirnar </Text>
           </TouchableOpacity>
@@ -62,7 +70,7 @@ class Hamburger extends React.Component {
           <TouchableOpacity
             activeOpacity={0.9}
             style={styles.menuButton}
-            onPress={() => this.setState({ menuIsOpen: false })}
+              onPress={() => { this.setState({ menuIsOpen: false }); navigate('UpcomingMovies'); }}
           >
             <Text> Væntanlegar </Text>
           </TouchableOpacity>
@@ -70,9 +78,9 @@ class Hamburger extends React.Component {
           <TouchableOpacity
             activeOpacity={0.9}
             style={styles.menuButton}
-            onPress={() => this.setState({ menuIsOpen: false })}
+            onPress={() => {this.setState({ menuIsOpen: false }); alert('HoHoHoo');}}
           >
-            <Text> something </Text>
+            <Text> Það eru jólin </Text>
           </TouchableOpacity>
         </View>
 

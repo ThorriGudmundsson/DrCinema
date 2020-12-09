@@ -1,4 +1,5 @@
 import React from 'react';
+import {  } from '../../routes/index';
 import {
   View,
 } from 'react-native';
@@ -9,6 +10,7 @@ import { getAllCinemas } from '../../services/cinemaService';
 // import PropTypes from 'prop-types';
 // import data from '../../resources/data.json';
 import CinemaList from '../../components/CinemaList';
+import Hamburger from '../../components/Hamburger';
 
 class Cinemas extends React.Component {
   constructor(props) {
@@ -41,6 +43,10 @@ class Cinemas extends React.Component {
         <CinemaList
           cinemas={this.state.cinemas}
           // onPress={this.onCinemaPress()}
+        />
+        <Hamburger
+          navigation={this.props.navigation}
+          themecolor='#800517'
         />
       </View>
     );
