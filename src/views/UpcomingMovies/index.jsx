@@ -1,4 +1,5 @@
 import React from 'react';
+import {  } from '../../components/UpcomingMovieThumbnail/index';
 import {
   View, Text,
 } from 'react-native';
@@ -14,23 +15,30 @@ class UpcomingMovies extends React.Component {
     // console.log(props);
     this.state = {
       upcomingMovies: {},
-      testsome:{},
     };
     // console.log(this.props);
   }
 
   async componentDidMount() {
-    const upcomingMovies = await getAllUpcomingMovies();
+    const data = await getAllUpcomingMovies();
+
+    const upcomingMovies = [];
+    data.forEach((item) => {
+      upcomingMovies.push({
+        id: item.id,
+        title: item.title,
+        poster: item.poster,
+        release: item['release-dateIS'],
+      });
+    });
     this.setState({
       upcomingMovies,
-      testsome: upcomingMovies[0],
-
     });
   }
 
   render() {
-    const { testsome, upcomingMovies } = this.state;
-    console.log(testsome);
+    const { upcomingMovies } = this.state;
+    // console.log(testsome['release-dateIS'])
     return (
       <View>
         <UpcomingMoviesList
@@ -38,7 +46,7 @@ class UpcomingMovies extends React.Component {
         />
         <Hamburger
           navigation={this.props.navigation}
-          themecolor='#8a755b'
+          themecolor="#8a755b"
         />
       </View>
     );

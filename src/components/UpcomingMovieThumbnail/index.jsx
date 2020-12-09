@@ -24,7 +24,7 @@ const UpcomingMovieThumbnail = ({
       />
       <View>
         <Text style={styles.thumbnailName}>{title}</Text>
-        <Text style={styles.thumbnailText}> releasedate {release}</Text>
+        <Text style={styles.thumbnailText}>kemur í bíó {release}</Text>
       </View>
     </View>
   </TouchableOpacity>
@@ -34,7 +34,7 @@ UpcomingMovieThumbnail.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   poster: PropTypes.string,
-  release: PropTypes.string, // ATH release-dateIS
+  release: PropTypes.string.isRequired, // ATH release-dateIS
 }
 
 export default withNavigation(UpcomingMovieThumbnail);

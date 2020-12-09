@@ -10,9 +10,10 @@ const UpcomingMoviesList = ({ upcomingMovies }) => (
     <FlatList
       numColumns={1}
       data={upcomingMovies}
+      //data={upcomingMovies.sort((a, b) => a.release.localeCompare(b.release))}
       renderItem={({
         item: {
-          id, title, poster, release
+          id, title, poster, release,
         },
       }) => (
         <UpcomingMovieThumbnail
@@ -25,7 +26,6 @@ const UpcomingMoviesList = ({ upcomingMovies }) => (
       keyExtractor={(upcomingMovie) => upcomingMovie.id.toString()}
     />
 
-
   </View>
 );
 
@@ -34,7 +34,7 @@ UpcomingMoviesList.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     poster: PropTypes.string,
-    release: ['release-dateIS'], // PropTypes.string, // ATH release-dateIS
+    release: PropTypes.string.isRequired,
   })).isRequired,
 };
 
