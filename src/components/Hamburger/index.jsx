@@ -1,94 +1,101 @@
 import React from 'react';
-import {  } from '../../views/Cinemas/index';
 import {
-  Text, View, TouchableOpacity, Modal
+  Text, View, TouchableOpacity, Modal,
 } from 'react-native';
-import { withNavigation } from 'react-navigation';
+// import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
 import { Ionicons } from '@expo/vector-icons';
 import styles from './styles';
 
-
 class Hamburger extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props.themecolor);
+
     this.state = {
       menuIsOpen: false,
-      navigate: this.props.navigation.navigate,
+      navigate: props.navigation.navigate,
       themecolor: props.themecolor,
     };
   }
 
-
-    render() {
-
-  const {menuIsOpen, navigate, themecolor} = this.state;
-  console.log(themecolor)
-  return (
-    <View
-      style={{position: 'absolute', // put the menu on top and over the navigation
+  render() {
+    const { menuIsOpen, navigate, themecolor } = this.state;
+    return (
+      <View
+        style={{
+          position: 'absolute', // put the menu on top and over the navigation
           top: -24,
           right: 0,
           backgroundColor: themecolor,
-          borderBottomLeftRadius: 36,}}
-    >
-      <TouchableOpacity
-        activeOpacity={0.7}
-        onPress={() => this.setState({ menuIsOpen: !menuIsOpen })}
-
-      >
-        <Ionicons name="ios-menu" style={styles.HamburgerIcon} />
-      </TouchableOpacity>
-
-      <Modal
-        visible={menuIsOpen}
-        transparent
-        animationType={'fade'}
+          borderBottomLeftRadius: 36,
+        }}
       >
         <TouchableOpacity
-          style={styles.modalOver}
-          onPress={() => this.setState({ menuIsOpen: false })}
-        />
-        <View style={styles.menuPosition}>
-          <TouchableOpacity
-            activeOpacity={0.9}
-            style={styles.menuButton}
-            onPress={() => { this.setState({ menuIsOpen: false }); navigate('Cinemas'); }}
-          >
-            <Text> Kvikmyndahúsin </Text>
-          </TouchableOpacity>
+          activeOpacity={0.7}
+          onPress={() => this.setState({ menuIsOpen: !menuIsOpen })}
 
-          <TouchableOpacity
-            activeOpacity={0.9}
-            style={styles.menuButton}
-            onPress={() => { this.setState({ menuIsOpen: false }); navigate('Movies'); }}
-          >
-            <Text> Myndirnar </Text>
-          </TouchableOpacity>
+        >
+          <Ionicons name="ios-menu" style={styles.HamburgerIcon} />
+        </TouchableOpacity>
 
+        <Modal
+          visible={menuIsOpen}
+          transparent
+          animationType="fade"
+        >
           <TouchableOpacity
-            activeOpacity={0.9}
-            style={styles.menuButton}
+            style={styles.modalOver}
+            onPress={() => this.setState({ menuIsOpen: false })}
+          />
+          <View style={styles.menuPosition}>
+            <TouchableOpacity
+              activeOpacity={0.9}
+              style={styles.menuButton}
+              onPress={() => { this.setState({ menuIsOpen: false }); navigate('Cinemas'); }}
+            >
+              <Text> Kvikmyndahúsin </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              activeOpacity={0.9}
+              style={styles.menuButton}
+              onPress={() => { this.setState({ menuIsOpen: false }); navigate('Movies'); }}
+            >
+              <Text> Myndirnar </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              activeOpacity={0.9}
+              style={styles.menuButton}
               onPress={() => { this.setState({ menuIsOpen: false }); navigate('UpcomingMovies'); }}
-          >
-            <Text> Væntanlegar </Text>
-          </TouchableOpacity>
+            >
+              <Text> Væntanlegar </Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity
-            activeOpacity={0.9}
-            style={styles.menuButton}
-            onPress={() => {this.setState({ menuIsOpen: false }); alert('HoHoHoo');}}
-          >
-            <Text> Það eru jólin </Text>
-          </TouchableOpacity>
-        </View>
+            <TouchableOpacity
+              activeOpacity={0.9}
+              style={styles.menuButton}
+              onPress={() => {this.setState({ menuIsOpen: false }); alert('HoHoHoo');}}
+            >
+              <Text> Það eru jólin </Text>
+            </TouchableOpacity>
+          </View>
 
-      </Modal>
-    </View>
+        </Modal>
+      </View>
     );
-}
+  }
 }
 
 export default Hamburger;
-//this.props.navigation.navigate('Gummistest')
+
+Hamburger.propTypes = {
+  navigation: PropTypes.arrayOf(PropTypes.shape({
+    navigate: PropTypes.function,
+  })).isRequired,
+  themecolor: PropTypes.string,
+};
+
+Hamburger.defaultProps = {
+  themecolor: '#333',
+};
