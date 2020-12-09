@@ -4,6 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './src/reducers';
 import AppContainer from './src/routes';
+// import { getMoviesInCinema } from './src/actions/movieActions';
 // import Hamburger from './src/components/Hamburger';
 
 const ConnectedSubApp = connect(null)(AppContainer);

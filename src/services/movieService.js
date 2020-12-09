@@ -17,3 +17,12 @@ export const getAllMoviesByCinemaId = async (cinemaID) => {
     : await allMovies.filter((m) => m.showtimes.some((s) => s.cinema.id === cinemaID));
   return moviesInCinema;
 };
+
+export const getMovieByMongoId = async (movies, mongoID) => {
+  for (let i = 0; i < movies.length; i += 1) {
+    if (movies[i]['_id'] === mongoID) {
+      return movies[i];
+    }
+  }
+  return undefined;
+};
