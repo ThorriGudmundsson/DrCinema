@@ -2,8 +2,11 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Cinemas from '../views/Cinemas';
 import CinemaDetail from '../views/CinemaDetail';
-// import Movies from '../views/Movies';
-// import UpcomingMovies from '../views/UpcomingMovies';
+import {  } from '../../App';
+
+import Movies from '../views/Movies';
+import UpcomingMovies from '../views/UpcomingMovies';
+
 
 const StackNavigator = createStackNavigator({
   Cinemas: {
@@ -12,7 +15,6 @@ const StackNavigator = createStackNavigator({
       title: 'Kvikmyndahúsin',
       headerStyle: {
         backgroundColor: '#800517',
-
 
       },
       headerTintColor: '#7DFDFE',
@@ -38,9 +40,8 @@ const StackNavigator = createStackNavigator({
 
     },
   },
-
-  // Movies,
-  // UpcomingMovies,
+  Movies,
+  UpcomingMovies,
 });
 
 export default createAppContainer(StackNavigator);

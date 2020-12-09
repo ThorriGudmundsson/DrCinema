@@ -17,12 +17,12 @@ class CinemaDetail extends React.Component {
     // console.log(this.props);
   }
 
-  /*async componentDidMount() {
+  async componentDidMount() {
     const cinema = await getCinemaById(this.props.navigation.state.params.id);
     this.setState({
       cinema,
     });
-  }*/
+  }
 
   render() {
     const { cinema } = this.state;

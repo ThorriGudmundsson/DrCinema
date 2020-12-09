@@ -1,4 +1,4 @@
-import { getAllCinemas, getCinemaById } from '../services/cinemaService';
+import { getAllCinemas } from '../services/cinemaService';
 import * as constants from '../constants';
 
 const getAllCinemasSuccess = (allCinemas) => ({
@@ -6,7 +6,7 @@ const getAllCinemasSuccess = (allCinemas) => ({
   payload: allCinemas,
 });
 
-const getCinemaByIdActionSuccess = (cinema) => ({
+const selectCinemaSuccess = (cinema) => ({
   type: constants.GET_CINEMA,
   payload: cinema,
 });
@@ -20,10 +20,16 @@ export const getAllCinemasAction = () => async () => {
   }
 };
 
-export const getCinemaByIdAction = async (id, cinemas) => {
+export const selectCinema = async (id) => {
   try {
-    const cinema = await getCinemaById(id, cinemas)
-    dispatch(getCinemaByIdActionSuccess(cinema));
+    const cinemas = await getAllCinemas();
+    for (let i = 1; i < cinemas.length; i += 1) {
+      if (cinemas[i].id === id) {
+        const cinema = cinemas[i];
+        dispatch(selectCinemaSuccess(cinema));
+        break;
+      }
+    }
   } catch (e) {
     // TODO: Should dispatch an error action
   }
