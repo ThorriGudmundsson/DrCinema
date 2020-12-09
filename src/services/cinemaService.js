@@ -1,14 +1,19 @@
 import { getJwtToken } from './tokenService';
 
-const cinemaEndpoint = 'http://api.kvikmyndir.is/theaters';
+const cinemaEndpoint = 'https://api.kvikmyndir.is/theaters';
 
-export async function getAllCinemas() {
+/* export async function getAllCinemas() {
   return fetch(cinemaEndpoint, {
     method: 'GET',
     headers: {
       'x-access-token': await getJwtToken(),
     },
   }).then((cinemas) => cinemas.json()).then((cinemas) => cinemas);
+} */
+export async function getAllCinemas() {
+  const result = await fetch(cinemaEndpoint, { method: 'GET', headers: { 'x-access-token': await getJwtToken() } });
+  if (!result.ok) { return []; /* or throw an exception, just something. */ }
+  return result.json();
 }
 
 export const getCinemaById = async (id) => {

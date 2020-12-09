@@ -39,7 +39,22 @@ const StackNavigator = createStackNavigator({
     },
   },
   Movies,
-  UpcomingMovies,
+  UpcomingMovies: {
+    screen: UpcomingMovies,
+    navigationOptions: {
+      title: 'Væntanlegar í bíó',
+      headerStyle: {
+        backgroundColor: '#8a755b',
+
+
+      },
+      headerTintColor: '#262018',
+      headerTitleStyle: {
+        fontWeight: 'normal',
+      },
+
+    },
+  },
 });
 
 export default createAppContainer(StackNavigator);
