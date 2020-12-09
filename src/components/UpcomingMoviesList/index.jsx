@@ -9,8 +9,7 @@ const UpcomingMoviesList = ({ upcomingMovies }) => (
   <View style={{ backgroundColor: '#3D3C3A' }}>
     <FlatList
       numColumns={1}
-      data={upcomingMovies}
-      //data={upcomingMovies.sort((a, b) => a.release.localeCompare(b.release))}
+      data={upcomingMovies} // already sorted in upper layer
       renderItem={({
         item: {
           id, title, poster, release,
