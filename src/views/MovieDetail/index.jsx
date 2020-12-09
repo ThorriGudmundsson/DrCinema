@@ -1,5 +1,5 @@
 import React from 'react';
-import {  } from '../UpcomingMovies/index';
+// import {  } from '../UpcomingMovies/index';
 import {
   View, Text,
 } from 'react-native';
@@ -7,28 +7,29 @@ import {
 import { connect } from 'react-redux';
 import Hamburger from '../../components/Hamburger';
 
-class Movies extends React.Component {
+class MovieDetail extends React.Component {
   constructor(props) {
     super(props);
     // console.log(props);
     this.state = {
-      movies: {},
+      movie: {},
     };
-    // console.log(this.props);
+    console.log(this.props);
   }
 
   async componentDidMount() {
-    // const cinema = await getCinemaById(this.props.navigation.state.params.id);
-    this.setState({
-      // cinema,
-    });
+    console.log("blabla");
+    // // const cinema = await getCinemaById(this.props.navigation.state.params.id);
+    // this.setState({
+    //   // cinema,
+    // });
   }
 
   render() {
     //const { cinema } = this.state;
     return (
       <View>
-        <Text>All í bío</Text>
+        <Text>Allir í bío</Text>
         <Hamburger
           navigation={this.props.navigation}
           themecolor='#ccc'
@@ -38,6 +39,6 @@ class Movies extends React.Component {
   }
 }
 
-// const mapStateToProps = ({ cinema }) => ({ cinema });
+const mapStateToProps = ({ cinema }) => ({ cinema });
 
-export default Movies;
+export default connect(mapStateToProps)(MovieDetail);

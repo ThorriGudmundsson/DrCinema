@@ -16,7 +16,6 @@ import styles from './styles';
 class CinemaDetail extends React.Component {
   constructor(props) {
     super(props);
-    // console.log(props);
     this.state = {
       cinema: {},
       movies: [],
@@ -27,7 +26,6 @@ class CinemaDetail extends React.Component {
   async componentDidMount() {
     const { selectCinema, getMoviesInCinema } = this.props;
     const cinema = await getCinemaById(this.props.navigation.state.params.id);
-    // console.log(cinema.id);
     const movies = await movieService.getAllMoviesByCinemaId(cinema.id);
     this.setState({
       cinema,

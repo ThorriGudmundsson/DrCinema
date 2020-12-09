@@ -2,9 +2,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Cinemas from '../views/Cinemas';
 import CinemaDetail from '../views/CinemaDetail';
-// import {  } from '../../App';
-
-import Movies from '../views/Movies';
+import MovieDetail from '../views/MovieDetail';
 import UpcomingMovies from '../views/UpcomingMovies';
 
 const StackNavigator = createStackNavigator({
@@ -38,7 +36,19 @@ const StackNavigator = createStackNavigator({
 
     },
   },
-  Movies,
+  MovieDetail: {
+    screen: MovieDetail,
+    navigationOptions: {
+      title: 'Nánarri upplýsingar',
+      headerStyle: {
+        backgroundColor: '#333',
+      },
+      headerTintColor: '#7DFDFE',
+      headerTitleStyle: {
+        fontWeight: 'normal',
+      },
+    },
+  },
   UpcomingMovies: {
     screen: UpcomingMovies,
     navigationOptions: {

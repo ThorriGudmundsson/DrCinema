@@ -14,7 +14,6 @@ const authorizeUser = async () => {
     body: JSON.stringify({ username: 'Thorri', password: 'DrCinema3' }),
   });
   const data = await response.json();
-  console.log(response);
 
   await SecureStore.setItemAsync('user_token', data.token);
 
@@ -33,7 +32,6 @@ const checkIfExpired = async (token) => {
 export const getJwtToken = async () => {
   let userToken;
   try {
-
     userToken = await SecureStore.getItemAsync('user_token');
   } catch (e) {
     console.log(e);
