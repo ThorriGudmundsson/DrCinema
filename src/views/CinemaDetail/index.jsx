@@ -1,7 +1,7 @@
 import React from 'react';
 // import {  } from '../UpcomingMovies/index';
 import {
-  View, Text,
+  View, Text, Linking,
 } from 'react-native';
 // import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
@@ -10,6 +10,7 @@ import { getMoviesInCinema } from '../../actions/movieActions';
 import { getCinemaById } from '../../services/cinemaService';
 import * as movieService from '../../services/movieService';
 import Hamburger from '../../components/Hamburger';
+import styles from './styles';
 
 class CinemaDetail extends React.Component {
   constructor(props) {
@@ -48,15 +49,15 @@ class CinemaDetail extends React.Component {
   render() {
     const { cinema, movies } = this.state;
     return (
-      <View>
-        <Text>{cinema.name}</Text>
+      <View style={styles.container}>
+        <Text style={styles.nameText}>{cinema.name}</Text>
         <Text>{cinema.description}</Text>
         <Text>{cinema.address}</Text>
         <Text>{cinema.phone}</Text>
-        <Text>{cinema.website}</Text>
+        <Text style={styles.websiteStyle} onPress={() => { Linking.openURL(`https://${cinema.website}`); }}>{cinema.website}</Text>
         <Hamburger
           navigation={this.props.navigation}
-          themecolor='#333'
+          themecolor="#333"
         />
       </View>
     );
