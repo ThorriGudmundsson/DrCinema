@@ -1,10 +1,11 @@
 import React from 'react';
-import {  } from '../Movies/index';
 import {
   View, Text,
 } from 'react-native';
 // import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
+import { getAllUpcomingMovies } from '../../services/upcomingMoviesService';
+import UpcomingMoviesList from '../../components/UpcomingMoviesList';
 import Hamburger from '../../components/Hamburger';
 
 class UpcomingMovies extends React.Component {
@@ -12,26 +13,32 @@ class UpcomingMovies extends React.Component {
     super(props);
     // console.log(props);
     this.state = {
-      movies: {},
+      upcomingMovies: {},
+      testsome:{},
     };
     // console.log(this.props);
   }
 
   async componentDidMount() {
-    // const cinema = await getCinemaById(this.props.navigation.state.params.id);
+    const upcomingMovies = await getAllUpcomingMovies();
     this.setState({
-      // cinema,
+      upcomingMovies,
+      testsome: upcomingMovies[0],
+
     });
   }
 
   render() {
-    //const { cinema } = this.state;
+    const { testsome, upcomingMovies } = this.state;
+    console.log(testsome);
     return (
       <View>
-        <Text>Væntanlegar</Text>
+        <UpcomingMoviesList
+          upcomingMovies={upcomingMovies}
+        />
         <Hamburger
           navigation={this.props.navigation}
-          themecolor='#ddd'
+          themecolor='#8a755b'
         />
       </View>
     );
@@ -41,3 +48,8 @@ class UpcomingMovies extends React.Component {
 // const mapStateToProps = ({ cinema }) => ({ cinema });
 
 export default UpcomingMovies
+
+
+/* <Text> { testsome.title }</Text>
+<Text> { testsome['release-dateIS'] }</Text>
+*/
