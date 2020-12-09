@@ -1,5 +1,4 @@
 import React from 'react';
-import {  } from '../../components/UpcomingMovieThumbnail/index';
 import {
   View, Text,
 } from 'react-native';
