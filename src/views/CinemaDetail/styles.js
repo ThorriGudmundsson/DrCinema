@@ -14,5 +14,4 @@ export default StyleSheet.create({
     color: 'blue',
     textDecorationLine: 'underline',
   },
-
 });

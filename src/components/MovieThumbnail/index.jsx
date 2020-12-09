@@ -11,16 +11,16 @@ const MovieThumbnail = ({
 }) => (
   <TouchableOpacity
     activeOpacity={0.7}
-    // onPress={() => navigate('CinemaDetail', {
-    //   id,
-    // })}
+    onPress={() => navigate('MovieDetail', {
+      id,
+    })}
   >
     <View style={styles.movieThumbnailContainer}>
       <View>
         <Text style={styles.thumbnailName}>{title}</Text>
         <Text style={styles.thumbnailText}>
           {genres.map((genre) => (
-              <Text>{genre.Name}</Text>
+            <Text>{genre.Name}</Text>
           ))}
         </Text>
       </View>
