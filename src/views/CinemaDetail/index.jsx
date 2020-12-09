@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 // import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
+import { selectCinema } from '../../actions/cinemaActions';
 import { getCinemaById } from '../../services/cinemaService';
 
 class CinemaDetail extends React.Component {
@@ -21,6 +22,8 @@ class CinemaDetail extends React.Component {
     this.setState({
       cinema,
     });
+    const { selectCinema } = this.props;
+    console.log(selectCinema);
   }
 
   render() {
@@ -35,4 +38,4 @@ class CinemaDetail extends React.Component {
 
 // const mapStateToProps = ({ cinema }) => ({ cinema });
 
-export default connect(null, { getCinemaById })(CinemaDetail);
+export default connect(null, { selectCinema })(CinemaDetail);
