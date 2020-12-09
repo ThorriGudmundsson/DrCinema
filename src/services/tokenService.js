@@ -1,7 +1,7 @@
 import * as SecureStore from 'expo-secure-store';
 import jwtDecode from 'jwt-decode';
 
-const authenticateEndpoint = 'https://api.kvikmyndir.is/authenticate';
+const authenticateEndpoint = 'https://api.kvikmyndir.is/theaters';
 
 // Authorize user and return new 24h token
 const authorizeUser = async () => {
@@ -11,10 +11,13 @@ const authorizeUser = async () => {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ username: 'TheGroke11', password: 'aparass92' }),
+    body: JSON.stringify({ username: 'Thorri', password: 'DrCinema3' }),
   });
   const data = await response.json();
+  console.log(esponse);
+
   await SecureStore.setItemAsync('user_token', data.token);
+
   return data.token;
 };
 
@@ -30,6 +33,7 @@ const checkIfExpired = async (token) => {
 export const getJwtToken = async () => {
   let userToken;
   try {
+
     userToken = await SecureStore.getItemAsync('user_token');
   } catch (e) {
     console.log(e);

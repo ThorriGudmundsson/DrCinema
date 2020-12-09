@@ -36,10 +36,11 @@ class Cinemas extends React.Component {
 
   render() {
     // const { cinemas } = this.state.cinemas;
+    const { cinemas } = this.state;
     return (
       <View>
         <CinemaList
-          cinemas={this.state.cinemas}
+          cinemas={cinemas}
           // onPress={this.onCinemaPress()}
         />
       </View>
