@@ -10,6 +10,7 @@ import { getMoviesInCinema } from '../../actions/movieActions';
 import { getCinemaById } from '../../services/cinemaService';
 import * as movieService from '../../services/movieService';
 import Hamburger from '../../components/Hamburger';
+import MovieList from '../../components/MovieList';
 import styles from './styles';
 
 class CinemaDetail extends React.Component {
@@ -58,6 +59,9 @@ class CinemaDetail extends React.Component {
         <Hamburger
           navigation={this.props.navigation}
           themecolor="#333"
+        />
+        <MovieList
+          movies={movies}
         />
       </View>
     );
