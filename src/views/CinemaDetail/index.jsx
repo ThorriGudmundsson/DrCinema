@@ -50,6 +50,10 @@ class CinemaDetail extends React.Component {
     return (
       <View>
         <Text>{cinema.name}</Text>
+        <Text>{cinema.description}</Text>
+        <Text>{cinema.address}</Text>
+        <Text>{cinema.phone}</Text>
+        <Text>{cinema.website}</Text>
         <Hamburger
           navigation={this.props.navigation}
           themecolor='#333'
