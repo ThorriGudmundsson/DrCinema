@@ -7,12 +7,12 @@ import { withNavigation } from 'react-navigation';
 import styles from './styles';
 
 const MovieThumbnail = ({
-  id, title, poster, plot, durationMinutes, year, genres, navigation: { navigate },
+  mongoId, title, poster, plot, durationMinutes, year, genres, navigation: { navigate },
 }) => (
   <TouchableOpacity
     activeOpacity={0.7}
     onPress={() => navigate('MovieDetail', {
-      id,
+      mongoId,
     })}
   >
     <View style={styles.movieThumbnailContainer}>

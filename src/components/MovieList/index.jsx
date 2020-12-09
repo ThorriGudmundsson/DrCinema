@@ -14,11 +14,11 @@ const MovieList = ({ movies }) => (
       data={movies}
       renderItem={({
         item: {
-          id, title, poster, plot, durationMinutes, year, genres,
+          _id, title, poster, plot, durationMinutes, year, genres,
         },
       }) => (
         <MovieThumbnail
-          id={id}
+          mongoId={_id}
           title={title}
           poster={poster}
           plot={plot}
