@@ -23,11 +23,19 @@ class UpcomingMovies extends React.Component {
     const { movies } = this.props;
     const upcomingMovies = [];
     await movies.forEach((item) => {
+      let trailer = false;
+      if (item.trailers[0] && item.trailers[0].results[0]) {
+        trailer = item.trailers[0].results[0].url;
+      }
+
+      //console.log(item.trailers[0]);
       upcomingMovies.push({
         mongoId: item['_id'],
         title: item.title,
         poster: item.poster,
         release: item['release-dateIS'],
+        trailer: trailer,
+
       });
     });
 
@@ -36,6 +44,7 @@ class UpcomingMovies extends React.Component {
     this.setState({
       upcomingMovies,
     });
+    console.log(upcomingMovies[0].trailer);
   }
 
   render() {
@@ -48,7 +57,6 @@ class UpcomingMovies extends React.Component {
         />
         <Hamburger
           navigation={this.props.navigation}
-          themecolor="#8a755b"
         />
       </View>
     );
@@ -58,8 +66,3 @@ class UpcomingMovies extends React.Component {
 const mapStateToProps = ({ movies }) => ({ movies });
 
 export default connect(mapStateToProps, { storeUpcomingMovies })(UpcomingMovies);
-
-
-/* <Text> { testsome.title }</Text>
-<Text> { testsome['release-dateIS'] }</Text>
-*/
