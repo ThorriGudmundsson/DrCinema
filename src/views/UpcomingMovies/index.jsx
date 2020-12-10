@@ -40,7 +40,7 @@ class UpcomingMovies extends React.Component {
     });
 
     // do this here becaus of sort not a funtion error in parameters
-    await upcomingMovies.sort((a, b) => a.release.localeCompare(b.release));
+    await upcomingMovies.sort((a, b) => b.release.localeCompare(a.release));
     this.setState({
       upcomingMovies,
     });

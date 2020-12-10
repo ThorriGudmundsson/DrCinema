@@ -16,7 +16,8 @@ export default StyleSheet.create({
   thumbnailText: {
     fontSize: 16,
     fontWeight: 'normal',
-    color: '#7DFDFE',
+    color: '#ffff',
+    fontStyle: 'italic',
     flexDirection: 'column',
     padding: 8,
   },
@@ -24,9 +25,9 @@ export default StyleSheet.create({
     flexDirection: 'row',
     flexGrow: 0.1,
     width: 'auto',
-    backgroundColor: '#800517',
-    borderWidth: 1,
-    borderColor: 'white',
+    backgroundColor: '#121875',
+    borderWidth: 2,
+    borderColor: 'black',
     margin: 4,
   },
 });
