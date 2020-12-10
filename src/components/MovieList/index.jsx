@@ -6,7 +6,6 @@ import MovieThumbnail from '../MovieThumbnail';
 // import {  } from '../../../App';
 // import {  } from '../CinemaThumbnail/index';
 // import {  } from '../../views/Cinemas/index';
-import styles from './style';
 
 const MovieList = ({ movies }) => (
   <View style={styles.listContainer}>

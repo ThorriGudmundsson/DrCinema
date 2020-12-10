@@ -1,7 +1,7 @@
 import React from 'react';
 // import {  } from '../UpcomingMovies/index';
 import {
-  View, Text, Linking, ScrollView,
+  View, Text, Linking,
 } from 'react-native';
 // import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
@@ -48,42 +48,25 @@ class CinemaDetail extends React.Component {
   render() {
     const { cinema, movies } = this.state;
     return (
-<<<<<<< HEAD
-      <View style={styles.container}>
-          <Text style={styles.nameText}>{cinema.name}</Text>
-          <Text>{cinema.description}</Text>
-          <Text>{cinema.address}</Text>
-=======
-      // <ScrollView>
       <View style={{ flex: 1}}>
         <Text style={styles.nameText}>{cinema.name}</Text>
         <Text>{cinema.description}</Text>
         <Text>{cinema.address}</Text>
-        <Text>{cinema.phone}</Text>
-        <Text style={styles.websiteStyle} onPress={() => { Linking.openURL(`https://${cinema.website}`); }}>{cinema.website}</Text>
+        <Hamburger
+          navigation={this.props.navigation}
+          themecolor="#333"
+        />
         <MovieList
           movies={movies}
         />
->>>>>>> 2908044cf1ac8d7441768afa223501ab8232d4e4
-        <Hamburger
-            navigation={this.props.navigation}
-            themecolor="#333"
-        />
-<<<<<<< HEAD
-        <MovieList
-            movies={movies}
-        />
-        <View style={{position: 'absolute', left: 0, right: 0, bottom: 0}}>
+        <View style={{
+          position: 'absolute', left: 0, right: 0, bottom: 0,
+        }}
+        >
           <Text>{cinema.phone}</Text>
           <Text style={styles.websiteStyle} onPress={() => { Linking.openURL(`https://${cinema.website}`); }}>{cinema.website}</Text>
         </View>
       </View>
-
-
-=======
-      </View>
-      // </ScrollView>
->>>>>>> 2908044cf1ac8d7441768afa223501ab8232d4e4
     );
   }
 }
