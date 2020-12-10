@@ -35,14 +35,12 @@ class CinemaDetail extends React.Component {
     const { cinema, cinemaMovies } = this.state;
     return (
       // <ScrollView>
-      <View style={{ flex: 1, backgroundColor: '#f0f8ff' }}>
+      <View style={{ flex: 1 }}>
+      
         <Text style={styles.nameText}>{cinema.name}</Text>
         <Text style={styles.descriptionStyle}>{cinema.description}</Text>
         <Text>{cinema.address}</Text>
-        <Hamburger
-          navigation={this.props.navigation}
-          themecolor="#333"
-        />
+
         <MovieList
           movies={cinemaMovies}
           cinemaId={cinema.id}
@@ -54,6 +52,8 @@ class CinemaDetail extends React.Component {
           </Text>
           <Text style={styles.websiteStyle} onPress={() => { Linking.openURL(`https://${cinema.website}`); }}>{cinema.website}</Text>
         </View>
+
+        <Hamburger navigation={this.props.navigation}/>
       </View>
     );
   }
