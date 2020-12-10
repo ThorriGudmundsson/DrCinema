@@ -1,46 +1,49 @@
 import React from 'react';
 import {
-  View, Text,
+  View, Text
 } from 'react-native';
+// import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
 import Hamburger from '../../components/Hamburger';
 import MovieDetails from '../../components/MovieDetails';
 import MovieTickets from '../../components/MovieTickets';
 import * as movieService from '../../services/movieService';
-import * as cinemaService from '../../services/cinemaService';
 
-class MovieDetail extends React.Component {
+class SimpleMovieDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       movie: {},
-      cinema: {},
-      showSchedule: [],
+      //cinema: {},
+      release: '',
     };
   }
 
   async componentDidMount() {
-    const { movies, cinemas } = this.props;
+    const { movies, cinema, release } = this.props;
+    console.log(this.props.navigation.state.params.mongoId)
     const movie = await movieService.getMovieByMongoId(movies, this.props.navigation.state.params.mongoId);
-    const cinema = await cinemaService.getCinemaById(this.props.navigation.state.params.cinemaId, cinemas)
-    const showSchedule = await movieService.getMovieShowsInCinema(movie, cinema);
+    //const showSchedule = await movieService.getMovieShowsInCinema(movie, cinema);
+    //
     this.setState({
       movie,
-      cinema,
-      showSchedule,
+      release: this.props.navigation.state.params.release,
+      //cinema,
+      //showSchedule,
     });
+    //console.log(this.props.navigation.state.params.release);
   }
 
   render() {
-    const { movie, cinema, showSchedule } = this.state;
-    const schedule = showSchedule.schedule;
-    console.log(schedule);
+    const { movie, release } = this.state;
+
     return (
       <View style={{ flex: 1 }}>
         <Hamburger
           navigation={this.props.navigation}
           themecolor="#ccc"
         />
+
         <MovieDetails
           title={movie.title}
           poster={movie.poster}
@@ -48,20 +51,14 @@ class MovieDetail extends React.Component {
           durationMinutes={movie.durationMinutes}
           year={movie.year}
           genres={movie.genres}
+          release={release}
         />
-        <View>
-          <Text>
-            <MovieTickets
-              schedule={schedule}
-              cinema={cinema}
-            />
-          </Text>
-        </View>
+
       </View>
     );
   }
 }
 
-const mapStateToProps = ({ movies, cinemas }) => ({ movies, cinemas });
+const mapStateToProps = ({ movies, cinema }) => ({ movies, cinema });
 
-export default connect(mapStateToProps)(MovieDetail);
+export default connect(mapStateToProps)(SimpleMovieDetail);

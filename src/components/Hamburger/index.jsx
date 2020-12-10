@@ -82,7 +82,7 @@ class Hamburger extends React.Component {
 export default Hamburger;
 
 Hamburger.propTypes = {
-  navigation: PropTypes.arrayOf(PropTypes.shape({
+  navigation: PropTypes.objectOf(PropTypes.shape({
     navigate: PropTypes.function,
   })).isRequired,
 };

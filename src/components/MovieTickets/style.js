@@ -8,12 +8,19 @@ export default StyleSheet.create({
   showTimeText: {
     fontSize: 18,
   },
-  flatlistStyle: {
-    // backgroundColor: 'grey',
-    // borderRadius: 30,
-  },
   containerStyle: {
     height: 10,
 
-  }
+  },
+  buttonStyle: {
+    fontSize: 16,
+    fontWeight: 'normal',
+    flexDirection: 'row',
+    backgroundColor: '#333',
+    padding: 15,
+    marginRight: 3,
+    marginLeft: 8,
+    borderRadius: 10,
+    marginTop: 5,
+  },
 });

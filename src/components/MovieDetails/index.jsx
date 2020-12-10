@@ -5,19 +5,28 @@ import {
 import styles from './style';
 
 const MovieDetails = ({
-  title, poster, plot, durationMinutes, year, genres,
+  title, poster, plot, durationMinutes, year, genres, release
 }) => (
-  <View style={[styles.container,{ flex: 1}]}>
+  <View style={styles.container}>
     <Text style={styles.movieTitle}>{title} ({year})</Text>
     <Image source={{ uri: poster }} style={styles.poster} />
     <Text style={styles.movieDurationText}>
-      Útgáfuár: {year}
+      Útgáfuár:
+      {' '}
+      {year}
     </Text>
-    <Text style={styles.movieDurationText}>Lengd: {durationMinutes} mínútur</Text>
+    {
+      durationMinutes
+        ?
+          <Text style={styles.movieDurationText}>Lengd: {durationMinutes} mínútur</Text>
+        :
+      <Text style={styles.movieDurationText}>Kemur í bío: {release} </Text>
+    }
     <View>
       <FlatList
         numColumns={1}
-        contentContainerStyle={{ flexDirection: 'row' }}
+        // contentContainerStyle={{ flexDirection: 'row' }}
+        contentContainerStyle={styles.FlatListContainer}
         data={genres}
         renderItem={({
           item: {

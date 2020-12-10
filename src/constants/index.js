@@ -1,4 +1,4 @@
-export const GET_ALL_CINEMAS = 'GET_ALL_CINEMAS';
-export const SELECT_CINEMA = 'SELECT_CINEMA';
-export const GET_ALL_MOVIES_IN_CINEMA = 'GET_ALL_MOVIES_IN_CINEMA';
+export const ALL_CINEMAS = 'ALL_CINEMAS';
+// export const SELECT_CINEMA = 'SELECT_CINEMA';
+export const ALL_MOVIES = 'ALL_MOVIES';
 export const UPCOMING_MOVIES = 'UPCOMING_MOVIES';

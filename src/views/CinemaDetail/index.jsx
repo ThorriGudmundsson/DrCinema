@@ -1,13 +1,10 @@
 import React from 'react';
-// import {  } from '../UpcomingMovies/index';
 import {
   View, Text, Linking,
 } from 'react-native';
-// import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
-import { selectCinema } from '../../actions/cinemaActions';
-import { getMoviesInCinema } from '../../actions/movieActions';
-import { getCinemaById } from '../../services/cinemaService';
+import { storeAllMovies } from '../../actions/movieActions';
+import * as cinemaService from '../../services/cinemaService';
 import * as movieService from '../../services/movieService';
 import Hamburger from '../../components/Hamburger';
 import MovieList from '../../components/MovieList';
@@ -18,47 +15,35 @@ class CinemaDetail extends React.Component {
     super(props);
     this.state = {
       cinema: {},
-      movies: [],
+      cinemaMovies: [],
     };
-    // console.log(this.props);
   }
 
   async componentDidMount() {
-    const { selectCinema, getMoviesInCinema } = this.props;
-    const cinema = await getCinemaById(this.props.navigation.state.params.id);
-    const movies = await movieService.getAllMoviesByCinemaId(cinema.id);
+    const { storeAllMovies } = this.props;
+    await storeAllMovies();
+    const { movies, cinemas } = this.props;
+    const cinema = await cinemaService.getCinemaById(this.props.navigation.state.params.id, cinemas);
+    const cinemaMovies = await movieService.getAllMoviesByCinemaId(cinema.id, movies);
     this.setState({
       cinema,
-      movies,
+      cinemaMovies,
     });
-
-    selectCinema(
-      cinema['address\t'],
-      cinema.city,
-      cinema.description,
-      cinema.google_map,
-      cinema.id,
-      cinema.name,
-      cinema.phone,
-      cinema.website,
-    );
-    getMoviesInCinema(cinema.id);
   }
 
   render() {
-    const { cinema, movies } = this.state;
+    const { cinema, cinemaMovies } = this.state;
     return (
       // <ScrollView>
-      <View style={{ flex: 1, backgroundColor: '#f0f8ff' }}>
+      <View style={{ flex: 1 }}>
+      
         <Text style={styles.nameText}>{cinema.name}</Text>
         <Text style={styles.descriptionStyle}>{cinema.description}</Text>
         <Text>{cinema.address}</Text>
-        <Hamburger
-          navigation={this.props.navigation}
-          themecolor="#333"
-        />
+
         <MovieList
-          movies={movies}
+          movies={cinemaMovies}
+          cinemaId={cinema.id}
         />
         <View style={{ padding: 10 }}>
           <Text>
@@ -67,11 +52,13 @@ class CinemaDetail extends React.Component {
           </Text>
           <Text style={styles.websiteStyle} onPress={() => { Linking.openURL(`https://${cinema.website}`); }}>{cinema.website}</Text>
         </View>
+
+        <Hamburger navigation={this.props.navigation}/>
       </View>
     );
   }
 }
 
-// const mapStateToProps = ({ cinema }) => ({ cinema });
+const mapStateToProps = ({ cinemas, movies }) => ({ cinemas, movies });
 
-export default connect(null, { selectCinema, getMoviesInCinema })(CinemaDetail);
+export default connect(mapStateToProps, { storeAllMovies })(CinemaDetail);

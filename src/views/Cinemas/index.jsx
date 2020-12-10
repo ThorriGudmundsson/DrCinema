@@ -3,7 +3,8 @@ import {
   View,
 } from 'react-native';
 import { connect } from 'react-redux';
-import { getAllCinemas } from '../../services/cinemaService';
+import { storeCinemas } from '../../actions/cinemaActions';
+// import { getAllCinemas } from '../../services/cinemaService';
 import CinemaList from '../../components/CinemaList';
 import Hamburger from '../../components/Hamburger';
 
@@ -16,7 +17,9 @@ class Cinemas extends React.Component {
   }
 
   async componentDidMount() {
-    const cinemas = await getAllCinemas();
+    const { storeCinemas } = this.props;
+    await storeCinemas();
+    const { cinemas } = this.props;
     this.setState({
       cinemas,
     });
@@ -37,4 +40,6 @@ class Cinemas extends React.Component {
   }
 }
 
-export default connect()(Cinemas);
+const mapStateToProps = ({ cinemas }) => ({ cinemas });
+
+export default connect(mapStateToProps, { storeCinemas })(Cinemas);

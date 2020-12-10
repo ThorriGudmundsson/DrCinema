@@ -7,7 +7,7 @@ import MovieThumbnail from '../MovieThumbnail';
 // import {  } from '../CinemaThumbnail/index';
 // import {  } from '../../views/Cinemas/index';
 
-const MovieList = ({ movies }) => (
+const MovieList = ({ movies, cinemaId }) => (
   <View style={styles.listContainer}>
     <FlatList
       numColumns={1}
@@ -19,6 +19,7 @@ const MovieList = ({ movies }) => (
       }) => (
         <MovieThumbnail
           mongoId={_id}
+          cinemaId={cinemaId}
           title={title}
           poster={poster}
           plot={plot}

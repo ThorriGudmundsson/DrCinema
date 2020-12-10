@@ -4,6 +4,7 @@ import Cinemas from '../views/Cinemas';
 import CinemaDetail from '../views/CinemaDetail';
 import MovieDetail from '../views/MovieDetail';
 import UpcomingMovies from '../views/UpcomingMovies';
+import SimpleMovieDetail from '../views/SimpleMovieDetail';
 
 const StackNavigator = createStackNavigator({
   Cinemas: {
@@ -39,7 +40,7 @@ const StackNavigator = createStackNavigator({
   MovieDetail: {
     screen: MovieDetail,
     navigationOptions: {
-      title: 'Nánarri upplýsingar',
+      title: 'Nánari upplýsingar',
       headerStyle: {
         backgroundColor: '#333',
       },
@@ -63,6 +64,19 @@ const StackNavigator = createStackNavigator({
         fontWeight: 'normal',
       },
 
+    },
+  },
+  SimpleMovieDetail: {
+    screen: SimpleMovieDetail,
+    navigationOptions: {
+      title: 'Upplýsingar',
+      headerStyle: {
+        backgroundColor: '#333',
+      },
+      headerTintColor: '#7DFDFE',
+      headerTitleStyle: {
+        fontWeight: 'normal',
+      },
     },
   },
 });
