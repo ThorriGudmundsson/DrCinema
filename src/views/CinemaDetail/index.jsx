@@ -49,19 +49,23 @@ class CinemaDetail extends React.Component {
     const { cinema, movies } = this.state;
     return (
       <View style={styles.container}>
-        <Text style={styles.nameText}>{cinema.name}</Text>
-        <Text>{cinema.description}</Text>
-        <Text>{cinema.address}</Text>
-        <Text>{cinema.phone}</Text>
-        <Text style={styles.websiteStyle} onPress={() => { Linking.openURL(`https://${cinema.website}`); }}>{cinema.website}</Text>
+          <Text style={styles.nameText}>{cinema.name}</Text>
+          <Text>{cinema.description}</Text>
+          <Text>{cinema.address}</Text>
         <Hamburger
-          navigation={this.props.navigation}
-          themecolor="#333"
+            navigation={this.props.navigation}
+            themecolor="#333"
         />
         <MovieList
-          movies={movies}
+            movies={movies}
         />
+        <View style={{position: 'absolute', left: 0, right: 0, bottom: 0}}>
+          <Text>{cinema.phone}</Text>
+          <Text style={styles.websiteStyle} onPress={() => { Linking.openURL(`https://${cinema.website}`); }}>{cinema.website}</Text>
+        </View>
       </View>
+
+
     );
   }
 }

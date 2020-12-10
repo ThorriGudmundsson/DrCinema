@@ -1,14 +1,15 @@
 import React from 'react';
-import { View, FlatList } from 'react-native';
+import { View, FlatList, ScrollView } from 'react-native';
 // import PropTypes from 'prop-types';
 // import styles from './styles';
 import MovieThumbnail from '../MovieThumbnail';
 // import {  } from '../../../App';
 // import {  } from '../CinemaThumbnail/index';
 // import {  } from '../../views/Cinemas/index';
+import styles from './style';
 
 const MovieList = ({ movies }) => (
-  <View style={{ backgroundColor: '#3D3C3A' }}>
+  <View style={{ paddingBottom: 550 }}>
     <FlatList
       numColumns={1}
       data={movies}
