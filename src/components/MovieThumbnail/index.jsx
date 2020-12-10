@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Text, View, TouchableOpacity, Linking,
+  Text, View, TouchableOpacity, Linking, FlatList,
 } from 'react-native';
 import { withNavigation } from 'react-navigation';
 // import PropTypes from 'prop-types';
@@ -18,11 +18,27 @@ const MovieThumbnail = ({
     <View style={styles.movieThumbnailContainer}>
       <View>
         <Text style={styles.thumbnailName}>{title}</Text>
-        <Text style={styles.thumbnailText}>
-          {genres.map((genre) => (
-            <Text>{genre.Name}</Text>
-          ))}
-        </Text>
+        <View>
+          <FlatList
+            numColumns={1}
+            data={genres}
+            renderItem={({
+              item: {
+                Name,
+              },
+            }) => (
+              <Text style={styles.thumbnailText}>{Name}</Text>
+            )}
+            keyExtractor={(genre) => genre.Name}
+          />
+          {/* <Text style={styles.thumbnailText}>
+            {genres.map((genre) => (
+              <Text>
+                {genre.Name} 5
+              </Text>
+            ))}
+          </Text> */}
+        </View>
       </View>
     </View>
   </TouchableOpacity>

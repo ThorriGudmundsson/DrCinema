@@ -24,7 +24,7 @@ class Cinemas extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         <CinemaList
           cinemas={this.state.cinemas}
         />

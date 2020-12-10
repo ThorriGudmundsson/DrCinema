@@ -22,8 +22,8 @@ export default StyleSheet.create({
   },
   movieThumbnailContainer: {
     flexDirection: 'row',
+    flexGrow: 0.1,
     width: 'auto',
-    height: 'auto',
     backgroundColor: '#800517',
     borderWidth: 1,
     borderColor: 'white',
