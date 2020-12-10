@@ -21,8 +21,16 @@ export const getAllMoviesByCinemaId = async (cinemaID) => {
 export const getMovieByMongoId = async (movies, mongoId) => {
   for (let i = 0; i < movies.length; i += 1) {
     if (movies[i]['_id'] === mongoId) {
-      console.log(movies[i].title);
       return movies[i];
+    }
+  }
+  return undefined;
+};
+
+export const getMovieShowsInCinema = async (movie, cinema) => {
+  for (let i = 0; i < movie.showtimes.length; i += 1) {
+    if (movie.showtimes[i].cinema.id === cinema.id) {
+      return movie.showtimes[i];
     }
   }
   return undefined;

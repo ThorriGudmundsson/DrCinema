@@ -1,13 +1,11 @@
 import { StyleSheet } from 'react-native';
 
-
 export default StyleSheet.create({
   HamburgerContainer: {
-    zIndex: 999,  // put the menu on top and over the navigation
+    zIndex: 999, // put the menu on top and over the navigation
     position: 'absolute',
     top: -65,
     right: 0,
-    borderBottomLeftRadius: 36,
   },
 
   HamburgerIcon: {
@@ -15,7 +13,6 @@ export default StyleSheet.create({
     fontSize: 30,
     color: '#fff',
   },
-
 
   modalOver: {
     width: '100%',
