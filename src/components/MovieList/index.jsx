@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, FlatList } from 'react-native';
+import { View, FlatList, ScrollView } from 'react-native';
 // import PropTypes from 'prop-types';
 import styles from './style';
 import MovieThumbnail from '../MovieThumbnail';

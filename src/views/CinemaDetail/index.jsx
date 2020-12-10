@@ -1,7 +1,7 @@
 import React from 'react';
 // import {  } from '../UpcomingMovies/index';
 import {
-  View, Text, Linking, ScrollView,
+  View, Text, Linking,
 } from 'react-native';
 // import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
@@ -53,17 +53,21 @@ class CinemaDetail extends React.Component {
         <Text style={styles.nameText}>{cinema.name}</Text>
         <Text>{cinema.description}</Text>
         <Text>{cinema.address}</Text>
-        <Text>{cinema.phone}</Text>
-        <Text style={styles.websiteStyle} onPress={() => { Linking.openURL(`https://${cinema.website}`); }}>{cinema.website}</Text>
-        <MovieList
-          movies={movies}
-        />
         <Hamburger
           navigation={this.props.navigation}
           themecolor="#333"
         />
+        <MovieList
+          movies={movies}
+        />
+        <View style={{ padding: 10 }}>
+          <Text>
+            Sími:
+            {cinema.phone}
+          </Text>
+          <Text style={styles.websiteStyle} onPress={() => { Linking.openURL(`https://${cinema.website}`); }}>{cinema.website}</Text>
+        </View>
       </View>
-      // </ScrollView>
     );
   }
 }
