@@ -13,8 +13,9 @@ const UpcomingMovieThumbnail = ({
   <TouchableOpacity
     activeOpacity={0.7}
     onPress={() => {
-      navigate('MovieDetail', {
+      navigate('SimpleMovieDetail', {
         mongoId,
+        release,
       });
     }}
   >
