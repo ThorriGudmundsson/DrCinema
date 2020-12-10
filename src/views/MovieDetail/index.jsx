@@ -1,7 +1,6 @@
 import React from 'react';
-// import {  } from '../UpcomingMovies/index';
 import {
-  View,
+  View, Text,
 } from 'react-native';
 // import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
@@ -52,10 +51,14 @@ class MovieDetail extends React.Component {
           year={movie.year}
           genres={movie.genres}
         />
-        <MovieTickets
-          schedule={schedule}
-          cinema={cinema}
-        />
+        <View>
+          <Text>
+            <MovieTickets
+              schedule={schedule}
+              cinema={cinema}
+            />
+          </Text>
+        </View>
       </View>
     );
   }

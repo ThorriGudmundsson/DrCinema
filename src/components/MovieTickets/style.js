@@ -5,7 +5,15 @@ export default StyleSheet.create({
     color: 'blue',
     textDecorationLine: 'underline',
   },
-  listContainer: {
-    flex: 1,
+  showTimeText: {
+    fontSize: 18,
   },
+  flatlistStyle: {
+    // backgroundColor: 'grey',
+    // borderRadius: 30,
+  },
+  containerStyle: {
+    height: 10,
+
+  }
 });

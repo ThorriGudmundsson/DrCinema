@@ -8,10 +8,11 @@ import styles from './style';
 const MovieTickets = ({
   schedule, cinema,
 }) => (
-  <View style={styles.listContainer}>
-    {/* <Text>{cinema.name} sýningar</Text> */}
-    <View style={{ flex: 1 }}>
+  <View style={[{ flex: 1 }, { height: 120 }]}>
+    <Text style={styles.showTimeText}>Sýningatímar:</Text>
+    <View>
       <FlatList
+        style={styles.flatlistStyle}
         numColumns={1}
         data={schedule}
         renderItem={({

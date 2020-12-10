@@ -24,10 +24,11 @@ export default StyleSheet.create({
     textAlign: 'left',
   },
   movieGenreText: {
-    textAlign: 'left',
+    // textAlign: 'left',
     fontSize: 16,
     fontWeight: 'bold',
     paddingBottom: 6,
+    marginRight: 4,
   },
   movieDurationText: {
     alignSelf: 'center',
