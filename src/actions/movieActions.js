@@ -6,13 +6,22 @@ const getMoviesInCinemaSuccess = (moviesInCinema) => ({
   payload: moviesInCinema,
 });
 
-export const getMoviesInCinema = (cinemaID) => async () => {
-  try {
-    const moviesInCinema = movieService.getMoviesInCinema(cinemaID);
-    dispatch(getMoviesInCinemaSuccess(moviesInCinema));
-  } catch (err) {
-    // TODO: Should dispatch an error action
-  }
+export const getMoviesInCinema = (cinemaID) => {
+  return async dispatch => {
+    try {
+      const moviesInCinema = await movieService.getAllMoviesByCinemaId(cinemaID);
+      // console.log(moviesInCinema);
+      dispatch(await getMoviesInCinemaSuccess(moviesInCinema));
+    } catch (err) {
+      // TODO: Should dispatch an error action
+    }
+  };
 };
+
+// export const getAllMovies = () => async () => {
+//   try {
+//     const allMovies = await movieService.getAllMovies
+//   }
+// }
 
 export default getMoviesInCinema;

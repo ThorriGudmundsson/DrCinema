@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, FlatList, ScrollView } from 'react-native';
 // import PropTypes from 'prop-types';
-// import styles from './styles';
+import styles from './style';
 import MovieThumbnail from '../MovieThumbnail';
 // import {  } from '../../../App';
 // import {  } from '../CinemaThumbnail/index';
@@ -9,7 +9,7 @@ import MovieThumbnail from '../MovieThumbnail';
 import styles from './style';
 
 const MovieList = ({ movies }) => (
-  <View style={{ paddingBottom: 550 }}>
+  <View style={styles.listContainer}>
     <FlatList
       numColumns={1}
       data={movies}

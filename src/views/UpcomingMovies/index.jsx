@@ -1,5 +1,4 @@
 import React from 'react';
-import {  } from '../../components/UpcomingMovieThumbnail/index';
 import {
   View, Text,
 } from 'react-native';
@@ -31,10 +30,15 @@ class UpcomingMovies extends React.Component {
         release: item['release-dateIS'],
       });
     });
+
+    // do this here becaus of sort not a funtion error in parameters
+    upcomingMovies.sort((a, b) => a.release.localeCompare(b.release))
     this.setState({
       upcomingMovies,
     });
+
   }
+
 
   render() {
     const { upcomingMovies } = this.state;

@@ -6,6 +6,7 @@ import {
 // import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
 import Hamburger from '../../components/Hamburger';
+import * as movieService from '../../services/movieService';
 
 class MovieDetail extends React.Component {
   constructor(props) {
@@ -14,31 +15,36 @@ class MovieDetail extends React.Component {
     this.state = {
       movie: {},
     };
-    console.log(this.props);
+    // console.log(this.props);
   }
 
   async componentDidMount() {
-    console.log("blabla");
-    // // const cinema = await getCinemaById(this.props.navigation.state.params.id);
-    // this.setState({
-    //   // cinema,
-    // });
+    const { movies } = this.props;
+    const movie = await movieService.getMovieByMongoId(movies, this.props.navigation.state.params.mongoId);
+    console.log(movie);
+    this.setState({
+      movie,
+    });
   }
 
   render() {
-    //const { cinema } = this.state;
+    const { movie } = this.state;
     return (
       <View>
-        <Text>Allir í bío</Text>
         <Hamburger
           navigation={this.props.navigation}
-          themecolor='#ccc'
+          themecolor="#ccc"
         />
+        <Text>{movie.title}</Text>
+        <Text>{movie.poster}</Text>
+        <Text>{movie.plot}</Text>
+        <Text>{movie.durationMinutes}</Text>
+        <Text>{movie.year}</Text>
       </View>
     );
   }
 }
 
-const mapStateToProps = ({ cinema }) => ({ cinema });
+const mapStateToProps = ({ movies }) => ({ movies });
 
 export default connect(mapStateToProps)(MovieDetail);

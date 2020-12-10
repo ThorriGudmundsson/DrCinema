@@ -2,14 +2,13 @@ import { StyleSheet } from 'react-native';
 
 
 export default StyleSheet.create({
-  /*HamburgerContainer: {
-    // not in use because of dinamic color
-    position: 'absolute', // put the menu on top and over the navigation
-    top: -24,
+  HamburgerContainer: {
+    zIndex: 999,  // put the menu on top and over the navigation
+    position: 'absolute',
+    top: -65,
     right: 0,
-    backgroundColor: '#800517',
     borderBottomLeftRadius: 36,
-  },*/
+  },
 
   HamburgerIcon: {
     padding: 20, // using this so clicable area are biggers
@@ -25,9 +24,9 @@ export default StyleSheet.create({
     // opacity: 0.7,
   },
 
-  menuPosition:{
+  menuPosition: {
     position: 'absolute', // put the menu on top and over the navigation
-    top: 100,
+    top: 50,
     right: 0,
   },
   menuButton: {
