@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 // import styles from './styles';
 import UpcomingMovieThumbnail from '../UpcomingMovieThumbnail';
 
-
 const UpcomingMoviesList = ({ upcomingMovies }) => (
   <View style={{ backgroundColor: '#3D3C3A' }}>
     <FlatList
@@ -12,7 +11,7 @@ const UpcomingMoviesList = ({ upcomingMovies }) => (
       data={upcomingMovies} // already sorted in upper layer
       renderItem={({
         item: {
-          mongoId, title, poster, release,
+          mongoId, title, poster, release, trailer,
         },
       }) => (
         <UpcomingMovieThumbnail
@@ -20,6 +19,7 @@ const UpcomingMoviesList = ({ upcomingMovies }) => (
           title={title}
           poster={poster}
           release={release}
+          trailer={trailer}
         />
       )}
       keyExtractor={(upcomingMovie) => upcomingMovie['_id']}
@@ -34,6 +34,7 @@ UpcomingMoviesList.propTypes = {
     title: PropTypes.string.isRequired,
     poster: PropTypes.string,
     release: PropTypes.string.isRequired,
+    trailer: PropTypes.string,
   })).isRequired,
 };
 

@@ -16,7 +16,8 @@ export default StyleSheet.create({
   thumbnailText: {
     fontSize: 16,
     fontWeight: 'normal',
-    color: '#7DFDFE',
+    color: '#ffff',
+    fontStyle: 'italic',
     flexDirection: 'column',
     padding: 8,
   },

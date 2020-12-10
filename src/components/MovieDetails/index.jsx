@@ -8,17 +8,9 @@ const MovieDetails = ({
   title, poster, plot, durationMinutes, year, genres,
 }) => (
   <View style={styles.container}>
-    <Text style={styles.movieTitle}>{title}</Text>
+    <Text style={styles.movieTitle}>{title} ({year})</Text>
     <Image source={{ uri: poster }} style={styles.poster} />
-    <Text>
-      Útgáfuár:
-      {year}
-    </Text>
-    <Text>
-      Sýningartími:
-      {durationMinutes} mín
-    </Text>
-    <Text style={{padding: 10}}>{plot}</Text>
+    <Text style={styles.movieDurationText}>Lengd: {durationMinutes} mínútur</Text>
     <View>
       <FlatList
         numColumns={1}
@@ -28,10 +20,11 @@ const MovieDetails = ({
             Name,
           },
         }) => (
-          <Text style={styles.thumbnailText}>{Name}</Text>
+          <Text style={styles.movieGenreText}>{Name}</Text>
         )}
         keyExtractor={(genre) => genre.Name}
       />
+      <Text style={styles.moviePlotText}>{plot}</Text>
     </View>
   </View>
 );

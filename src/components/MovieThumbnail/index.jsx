@@ -17,7 +17,7 @@ const MovieThumbnail = ({
   >
     <View style={styles.movieThumbnailContainer}>
       <View>
-        <Text style={styles.thumbnailName}>{title}</Text>
+        <Text style={styles.thumbnailName}>{title} ({year})</Text>
         <View>
           <FlatList
             numColumns={1}
