@@ -2,27 +2,15 @@ import * as movieService from '../services/movieService';
 import * as upcomingMoviesService from '../services/upcomingMoviesService';
 import * as constants from '../constants';
 
-const getMoviesInCinemaSuccess = (moviesInCinema) => ({
-  type: constants.GET_ALL_MOVIES_IN_CINEMA,
-  payload: moviesInCinema,
-});
-
 const storeUpcomingMoviesSuccess = (upcomingMovies) => ({
   type: constants.UPCOMING_MOVIES,
   payload: upcomingMovies,
 });
 
-export const getMoviesInCinema = (cinemaID) => {
-  return async dispatch => {
-    try {
-      const moviesInCinema = await movieService.getAllMoviesByCinemaId(cinemaID);
-      // console.log(moviesInCinema);
-      dispatch(await getMoviesInCinemaSuccess(moviesInCinema));
-    } catch (err) {
-      // TODO: Should dispatch an error action
-    }
-  };
-};
+const storeAllMoviesSuccess = (allMovies) => ({
+  type: constants.ALL_MOVIES,
+  payload: allMovies,
+});
 
 export const storeUpcomingMovies = () => {
   return async dispatch => {
@@ -35,10 +23,13 @@ export const storeUpcomingMovies = () => {
   };
 };
 
-// export const getAllMovies = () => async () => {
-//   try {
-//     const allMovies = await movieService.getAllMovies
-//   }
-// }
-
-export default getMoviesInCinema;
+export const storeAllMovies = () => {
+  return async dispatch => {
+    try {
+      const allMovies = await movieService.getAllMovies();
+      dispatch(await storeAllMoviesSuccess(allMovies));
+    } catch (err) {
+      // TODO: Should dispatch an error action
+    }
+  };
+};

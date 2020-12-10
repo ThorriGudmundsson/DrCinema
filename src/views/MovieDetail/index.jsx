@@ -1,14 +1,13 @@
 import React from 'react';
-// import {  } from '../UpcomingMovies/index';
 import {
   View,
 } from 'react-native';
-// import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
 import Hamburger from '../../components/Hamburger';
 import MovieDetails from '../../components/MovieDetails';
 import MovieTickets from '../../components/MovieTickets';
 import * as movieService from '../../services/movieService';
+import * as cinemaService from '../../services/cinemaService';
 
 class MovieDetail extends React.Component {
   constructor(props) {
@@ -16,13 +15,14 @@ class MovieDetail extends React.Component {
     this.state = {
       movie: {},
       cinema: {},
-      showSchedule: []
+      showSchedule: [],
     };
   }
 
   async componentDidMount() {
-    const { movies, cinema } = this.props;
+    const { movies, cinemas } = this.props;
     const movie = await movieService.getMovieByMongoId(movies, this.props.navigation.state.params.mongoId);
+    const cinema = await cinemaService.getCinemaById(this.props.navigation.state.params.cinemaId, cinemas)
     const showSchedule = await movieService.getMovieShowsInCinema(movie, cinema);
     this.setState({
       movie,
@@ -33,11 +33,8 @@ class MovieDetail extends React.Component {
 
   render() {
     const { movie, cinema, showSchedule } = this.state;
-    // console.log(showSchedule);
-    // console.log(showSchedule.schedule);
     const schedule = showSchedule.schedule;
     console.log(schedule);
-    // console.log(cinema);
     return (
       <View style={{ flex: 1 }}>
         <Hamburger
@@ -61,6 +58,6 @@ class MovieDetail extends React.Component {
   }
 }
 
-const mapStateToProps = ({ movies, cinema }) => ({ movies, cinema });
+const mapStateToProps = ({ movies, cinemas }) => ({ movies, cinemas });
 
 export default connect(mapStateToProps)(MovieDetail);

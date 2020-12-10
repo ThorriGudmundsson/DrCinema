@@ -7,12 +7,13 @@ import { withNavigation } from 'react-navigation';
 import styles from './styles';
 
 const MovieThumbnail = ({
-  mongoId, title, poster, plot, durationMinutes, year, genres, navigation: { navigate },
+  mongoId, cinemaId, title, poster, plot, durationMinutes, year, genres, navigation: { navigate },
 }) => (
   <TouchableOpacity
     activeOpacity={0.7}
     onPress={() => navigate('MovieDetail', {
       mongoId,
+      cinemaId,
     })}
   >
     <View style={styles.movieThumbnailContainer}>
@@ -31,13 +32,6 @@ const MovieThumbnail = ({
             )}
             keyExtractor={(genre) => genre.Name}
           />
-          {/* <Text style={styles.thumbnailText}>
-            {genres.map((genre) => (
-              <Text>
-                {genre.Name} 5
-              </Text>
-            ))}
-          </Text> */}
         </View>
       </View>
     </View>

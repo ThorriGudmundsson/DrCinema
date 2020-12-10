@@ -11,10 +11,9 @@ export async function getAllMovies() {
   }).then((movies) => movies.json()).then((movies) => movies);
 }
 
-export const getAllMoviesByCinemaId = async (cinemaID) => {
-  const allMovies = await getAllMovies();
-  const moviesInCinema = allMovies.length === 0 ? []
-    : await allMovies.filter((m) => m.showtimes.some((s) => s.cinema.id === cinemaID));
+export const getAllMoviesByCinemaId = async (cinemaID, movies) => {
+  const moviesInCinema = movies.length === 0 ? []
+    : await movies.filter((m) => m.showtimes.some((s) => s.cinema.id === cinemaID));
   return moviesInCinema;
 };
 

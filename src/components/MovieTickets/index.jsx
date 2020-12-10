@@ -9,7 +9,6 @@ const MovieTickets = ({
   schedule, cinema,
 }) => (
   <View style={styles.listContainer}>
-    {/* <Text>{cinema.name} sýningar</Text> */}
     <View style={{ flex: 1 }}>
       <FlatList
         numColumns={1}
