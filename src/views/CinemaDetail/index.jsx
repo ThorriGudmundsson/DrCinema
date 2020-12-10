@@ -59,11 +59,11 @@ class CinemaDetail extends React.Component {
         <MovieList
           movies={movies}
         />
-        <View style={{
-          position: 'absolute', left: 0, right: 0, bottom: 0,
-        }}
-        >
-          <Text>{cinema.phone}</Text>
+        <View style={{ padding: 10 }}>
+          <Text>
+            Sími:
+            {cinema.phone}
+          </Text>
           <Text style={styles.websiteStyle} onPress={() => { Linking.openURL(`https://${cinema.website}`); }}>{cinema.website}</Text>
         </View>
       </View>
