@@ -10,9 +10,15 @@ const MovieDetails = ({
   <View style={styles.container}>
     <Text style={styles.movieTitle}>{title}</Text>
     <Image source={{ uri: poster }} style={styles.poster} />
-    <Text>{plot}</Text>
-    <Text>{durationMinutes}</Text>
-    <Text>{year}</Text>
+    <Text>
+      Útgáfuár:
+      {year}
+    </Text>
+    <Text>
+      Sýningartími:
+      {durationMinutes} mín
+    </Text>
+    <Text style={{padding: 10}}>{plot}</Text>
     <View>
       <FlatList
         numColumns={1}

@@ -49,9 +49,9 @@ class CinemaDetail extends React.Component {
     const { cinema, movies } = this.state;
     return (
       // <ScrollView>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: '#f0f8ff' }}>
         <Text style={styles.nameText}>{cinema.name}</Text>
-        <Text>{cinema.description}</Text>
+        <Text style={styles.descriptionStyle}>{cinema.description}</Text>
         <Text>{cinema.address}</Text>
         <Hamburger
           navigation={this.props.navigation}

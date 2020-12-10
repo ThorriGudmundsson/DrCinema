@@ -24,9 +24,9 @@ export default StyleSheet.create({
     flexDirection: 'row',
     flexGrow: 0.1,
     width: 'auto',
-    backgroundColor: '#800517',
-    borderWidth: 1,
-    borderColor: 'white',
+    backgroundColor: '#121875',
+    borderWidth: 2,
+    borderColor: 'black',
     margin: 4,
   },
 });
