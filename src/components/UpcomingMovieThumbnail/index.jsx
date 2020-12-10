@@ -7,14 +7,15 @@ import PropTypes from 'prop-types';
 import styles from './styles';
 
 const UpcomingMovieThumbnail = ({
-  id, title, poster, release, navigation: { navigate },
+  mongoId, title, poster, release, navigation: { navigate },
 }) => (
   <TouchableOpacity
     activeOpacity={0.7}
-    onPress={() => {}}
-    /* navigate('UpcomingMovieDetail', {
-      id,
-    }) */
+    onPress={() => {
+      navigate('MovieDetail', {
+        mongoId,
+      });
+    }}
   >
     <View style={styles.ThumbnailContainer}>
       <Image
@@ -24,14 +25,14 @@ const UpcomingMovieThumbnail = ({
       />
       <View>
         <Text style={styles.thumbnailName}>{title}</Text>
-        <Text style={styles.thumbnailText}>kemur í bíó {release}</Text>
+        <Text style={styles.thumbnailText}>Kemur í bíó: {release}</Text>
       </View>
     </View>
   </TouchableOpacity>
 );
 
 UpcomingMovieThumbnail.propTypes = {
-  id: PropTypes.number.isRequired,
+  mongoId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   poster: PropTypes.string,
   release: PropTypes.string.isRequired, // ATH release-dateIS

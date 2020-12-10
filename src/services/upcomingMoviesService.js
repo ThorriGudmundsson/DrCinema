@@ -1,9 +1,9 @@
 import { getJwtToken } from './tokenService';
 
-const cinemaEndpoint = 'http://api.kvikmyndir.is/upcoming';
+const ENDPOINT = 'https://api.kvikmyndir.is/upcoming';
 
 export async function getAllUpcomingMovies() {
-  return fetch(cinemaEndpoint, {
+  return fetch(ENDPOINT, {
     method: 'GET',
     headers: {
       'x-access-token': await getJwtToken(),

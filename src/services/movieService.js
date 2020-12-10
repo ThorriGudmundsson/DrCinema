@@ -1,9 +1,9 @@
 import { getJwtToken } from './tokenService';
 
-const movieEndpoint = 'http://api.kvikmyndir.is/movies';
+const ENDPOINT = 'http://api.kvikmyndir.is/movies';
 
 export async function getAllMovies() {
-  return fetch(movieEndpoint, {
+  return fetch(ENDPOINT, {
     method: 'GET',
     headers: {
       'x-access-token': await getJwtToken(),
@@ -18,9 +18,10 @@ export const getAllMoviesByCinemaId = async (cinemaID) => {
   return moviesInCinema;
 };
 
-export const getMovieByMongoId = async (movies, mongoID) => {
+export const getMovieByMongoId = async (movies, mongoId) => {
   for (let i = 0; i < movies.length; i += 1) {
-    if (movies[i]['_id'] === mongoID) {
+    if (movies[i]['_id'] === mongoId) {
+      console.log(movies[i].title);
       return movies[i];
     }
   }

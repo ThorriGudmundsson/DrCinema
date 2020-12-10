@@ -12,17 +12,17 @@ const UpcomingMoviesList = ({ upcomingMovies }) => (
       data={upcomingMovies} // already sorted in upper layer
       renderItem={({
         item: {
-          id, title, poster, release,
+          mongoId, title, poster, release,
         },
       }) => (
         <UpcomingMovieThumbnail
-          id={id}
+          mongoId={mongoId}
           title={title}
           poster={poster}
           release={release}
         />
       )}
-      keyExtractor={(upcomingMovie) => upcomingMovie.id.toString()}
+      keyExtractor={(upcomingMovie) => upcomingMovie['_id']}
     />
 
   </View>
@@ -30,7 +30,7 @@ const UpcomingMoviesList = ({ upcomingMovies }) => (
 
 UpcomingMoviesList.propTypes = {
   upcomingMovies: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    mongoId: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     poster: PropTypes.string,
     release: PropTypes.string.isRequired,

@@ -4,27 +4,27 @@ import {
 } from 'react-native';
 // import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
-import { getAllUpcomingMovies } from '../../services/upcomingMoviesService';
+import { storeUpcomingMovies } from '../../actions/movieActions';
+// import { getAllUpcomingMovies } from '../../services/upcomingMoviesService';
 import UpcomingMoviesList from '../../components/UpcomingMoviesList';
 import Hamburger from '../../components/Hamburger';
 
 class UpcomingMovies extends React.Component {
   constructor(props) {
     super(props);
-    // console.log(props);
     this.state = {
-      upcomingMovies: {},
+      upcomingMovies: [],
     };
-    // console.log(this.props);
   }
 
   async componentDidMount() {
-    const data = await getAllUpcomingMovies();
-
+    const { storeUpcomingMovies } = this.props;
+    await storeUpcomingMovies();
+    const { movies } = this.props;
     const upcomingMovies = [];
-    data.forEach((item) => {
+    await movies.forEach((item) => {
       upcomingMovies.push({
-        id: item.id,
+        mongoId: item['_id'],
         title: item.title,
         poster: item.poster,
         release: item['release-dateIS'],
@@ -32,13 +32,11 @@ class UpcomingMovies extends React.Component {
     });
 
     // do this here becaus of sort not a funtion error in parameters
-    upcomingMovies.sort((a, b) => a.release.localeCompare(b.release))
+    await upcomingMovies.sort((a, b) => a.release.localeCompare(b.release));
     this.setState({
       upcomingMovies,
     });
-
   }
-
 
   render() {
     const { upcomingMovies } = this.state;
@@ -57,9 +55,9 @@ class UpcomingMovies extends React.Component {
   }
 }
 
-// const mapStateToProps = ({ cinema }) => ({ cinema });
+const mapStateToProps = ({ movies }) => ({ movies });
 
-export default UpcomingMovies
+export default connect(mapStateToProps, { storeUpcomingMovies })(UpcomingMovies);
 
 
 /* <Text> { testsome.title }</Text>

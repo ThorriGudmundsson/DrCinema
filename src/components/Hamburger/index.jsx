@@ -48,13 +48,13 @@ class Hamburger extends React.Component {
               <Text> Kvikmyndahúsin </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity
+            {/* <TouchableOpacity
               activeOpacity={0.9}
               style={styles.menuButton}
               onPress={() => { this.setState({ menuIsOpen: false }); navigate('Movies'); }}
             >
               <Text> Myndirnar </Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             <TouchableOpacity
               activeOpacity={0.9}

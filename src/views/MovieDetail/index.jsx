@@ -6,22 +6,20 @@ import {
 // import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
 import Hamburger from '../../components/Hamburger';
+import MovieDetails from '../../components/MovieDetails';
 import * as movieService from '../../services/movieService';
 
 class MovieDetail extends React.Component {
   constructor(props) {
     super(props);
-    // console.log(props);
     this.state = {
       movie: {},
     };
-    // console.log(this.props);
   }
 
   async componentDidMount() {
     const { movies } = this.props;
     const movie = await movieService.getMovieByMongoId(movies, this.props.navigation.state.params.mongoId);
-    console.log(movie);
     this.setState({
       movie,
     });
@@ -30,16 +28,19 @@ class MovieDetail extends React.Component {
   render() {
     const { movie } = this.state;
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         <Hamburger
           navigation={this.props.navigation}
           themecolor="#ccc"
         />
-        <Text>{movie.title}</Text>
-        <Text>{movie.poster}</Text>
-        <Text>{movie.plot}</Text>
-        <Text>{movie.durationMinutes}</Text>
-        <Text>{movie.year}</Text>
+        <MovieDetails
+          title={movie.title}
+          poster={movie.poster}
+          plot={movie.plot}
+          durationMinutes={movie.durationMinutes}
+          year={movie.year}
+          genres={movie.genres}
+        />
       </View>
     );
   }
