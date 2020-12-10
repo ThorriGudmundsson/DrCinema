@@ -14,18 +14,16 @@ class MovieDetail extends React.Component {
     // console.log(props);
     this.state = {
       movie: {},
-      cinema: {},
     };
     // console.log(this.props);
   }
 
   async componentDidMount() {
-    const { cinema, movies } = this.props;
+    const { movies } = this.props;
     const movie = await movieService.getMovieByMongoId(movies, this.props.navigation.state.params.mongoId);
     console.log(movie);
     this.setState({
       movie,
-      cinema,
     });
   }
 
@@ -47,6 +45,6 @@ class MovieDetail extends React.Component {
   }
 }
 
-const mapStateToProps = ({ cinema, movies }) => ({ cinema, movies });
+const mapStateToProps = ({ movies }) => ({ movies });
 
 export default connect(mapStateToProps)(MovieDetail);
