@@ -32,14 +32,13 @@ const UpcomingMovieThumbnail = ({
         {
           trailer
             ? (
-              <TouchableOpacity
+              <View
                 visible={false}
                 style={styles.innerButtom}
-                onPress={() => { Linking.openURL(trailer); }}
               >
                 <Ionicons name="ios-film" style={styles.icon} />
-                <Text style={styles.thumbnailText}>Skoða kítlu</Text>
-              </TouchableOpacity>
+                <Text style={styles.thumbnailText}>Hefur kítlu</Text>
+              </View>
             )
             : <></>
         }

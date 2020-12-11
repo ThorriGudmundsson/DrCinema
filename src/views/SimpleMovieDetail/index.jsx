@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View, ScrollView, Text,
+  View, ScrollView,
 } from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import { connect } from 'react-redux';
@@ -23,7 +23,6 @@ class SimpleMovieDetail extends React.Component {
   async componentDidMount() {
     let trailerId = false;
     const { upcomingMovies } = this.props;
-    console.log(this.props.navigation.state.params.trailer);
     const movie = await movieService.getMovieByMongoId(upcomingMovies, this.props.navigation.state.params.mongoId);
     if (this.props.navigation.state.params.trailer) {
       trailerId = await upcomingService.getYoutubeIDFromURL(this.props.navigation.state.params.trailer);
@@ -39,31 +38,33 @@ class SimpleMovieDetail extends React.Component {
   render() {
     const { movie, release, trailerId } = this.state;
     return (
-      <ScrollView style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
         <Hamburger navigation={this.props.navigation} />
-        <MovieDetails
-          title={movie.title}
-          poster={movie.poster}
-          plot={movie.plot}
-          durationMinutes={movie.durationMinutes}
-          year={movie.year}
-          genres={movie.genres}
-          release={release}
-        />
-        {
-          trailerId
-            ? (
-              <View style={styles.videoPlayer}>
-                <YoutubePlayer
-                  height={300}
-                  width={300}
-                  videoId={trailerId}
-                />
-              </View>
-            )
-            : <></>
-        }
-      </ScrollView>
+        <ScrollView style={{ flex: 1 }}>
+          <MovieDetails
+            title={movie.title}
+            poster={movie.poster}
+            plot={movie.plot}
+            durationMinutes={movie.durationMinutes}
+            year={movie.year}
+            genres={movie.genres}
+            release={release}
+          />
+          {
+            trailerId
+              ? (
+                <View style={styles.videoPlayer}>
+                  <YoutubePlayer
+                    height={300}
+                    width={300}
+                    videoId={trailerId}
+                  />
+                </View>
+              )
+              : <></>
+          }
+        </ScrollView>
+      </View>
     );
   }
 }

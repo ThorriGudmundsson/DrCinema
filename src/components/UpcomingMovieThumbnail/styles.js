@@ -19,9 +19,7 @@ export default StyleSheet.create({
     fontWeight: 'normal',
     color: '#262018',
     flexDirection: 'column',
-
     marginRight: 8,
-
   },
   icon: {
     fontSize: 16,
@@ -31,7 +29,6 @@ export default StyleSheet.create({
     marginTop: 3,
     marginLeft: 3,
     marginRight: 8,
-
   },
 
   ThumbnailContainer: {
@@ -49,8 +46,6 @@ export default StyleSheet.create({
     fontWeight: 'normal',
     color: '#262018',
     flexDirection: 'row',
-    alignSelf: 'flex-end',
-    backgroundColor: '#fff',
     padding: 10,
     marginTop: 16,
     borderRadius: 16,
