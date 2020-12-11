@@ -1,9 +1,7 @@
 import React from 'react';
 import { View, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
-// import styles from './styles';
 import CinemaThumbnail from '../CinemaThumbnail';
-
 
 const CinemaList = ({ cinemas }) => (
   <View style={{ backgroundColor: '#3D3C3A' }}>

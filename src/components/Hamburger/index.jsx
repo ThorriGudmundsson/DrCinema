@@ -4,7 +4,6 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { Ionicons } from '@expo/vector-icons';
-import { connect } from 'react-redux';
 import styles from './styles';
 
 class Hamburger extends React.Component {
@@ -18,18 +17,7 @@ class Hamburger extends React.Component {
   }
 
   christmas() {
-    alert(' *** hohoho Gleðileg Jól ***' )
-
-    //this.state.navigate('SimpleMovieDetail', { mongoId: '5fd37d1c034403e09d4fd5ac' });
-    // const rn = this.props.navigation.state.routeName;
-    // if (rn === 'CinemaDetail' || rn === 'MovieDetail') {
-    //   this.state.navigate('SimpleMovieDetail', { mongoId: '5fd25829034403e09d26045b' });}
-    // else if (rn === 'UpcomingMovies') {
-    //   this.state.navigate('SimpleMovieDetail', { mongoId: '5fd22904034403e09d1f4199' });}
-    // else {
-    //   alert('hohoho')
-    // }
-    //this.state.navigate('SimpleMovieDetail', { mongoId: '5fd25829034403e09d26045b' });
+    alert(' *** hohoho Gleðileg Jól ***' );
   }
 
   render() {
@@ -64,14 +52,6 @@ class Hamburger extends React.Component {
               <Text> Kvikmyndahúsin </Text>
             </TouchableOpacity>
 
-            {/* <TouchableOpacity
-              activeOpacity={0.9}
-              style={styles.menuButton}
-              onPress={() => { this.setState({ menuIsOpen: false }); navigate('Movies'); }}
-            >
-              <Text> Myndirnar </Text>
-            </TouchableOpacity> */}
-
             <TouchableOpacity
               activeOpacity={0.9}
               style={styles.menuButton}
@@ -84,7 +64,6 @@ class Hamburger extends React.Component {
               activeOpacity={0.9}
               style={styles.menuButton}
               onPress={() => { this.setState({ menuIsOpen: false }); this.christmas(); }}
-
             >
               <Text> Það eru jólin </Text>
             </TouchableOpacity>
@@ -100,6 +79,6 @@ export default Hamburger;
 
 Hamburger.propTypes = {
   navigation: PropTypes.shape({
-    navigate: PropTypes.function,
+    navigate: PropTypes.func,
   }).isRequired,
 };

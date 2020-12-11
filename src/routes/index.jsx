@@ -13,13 +13,11 @@ const StackNavigator = createStackNavigator({
       title: 'Kvikmyndahúsin',
       headerStyle: {
         backgroundColor: '#800517',
-
       },
       headerTintColor: '#7DFDFE',
       headerTitleStyle: {
         fontWeight: 'normal',
       },
-
     },
   },
   CinemaDetail: {
@@ -28,13 +26,11 @@ const StackNavigator = createStackNavigator({
       title: 'Komdu í bío',
       headerStyle: {
         backgroundColor: '#121875',
-
       },
       headerTintColor: '#d0e4f5',
       headerTitleStyle: {
         fontWeight: 'normal',
       },
-
     },
   },
   MovieDetail: {
@@ -56,8 +52,6 @@ const StackNavigator = createStackNavigator({
       title: 'Væntanlegar í bíó',
       headerStyle: {
         backgroundColor: '#8a755b',
-
-
       },
       headerTintColor: '#262018',
       headerTitleStyle: {

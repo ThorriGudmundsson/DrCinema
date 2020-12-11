@@ -4,7 +4,6 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { storeCinemas } from '../../actions/cinemaActions';
-// import { getAllCinemas } from '../../services/cinemaService';
 import CinemaList from '../../components/CinemaList';
 import Hamburger from '../../components/Hamburger';
 

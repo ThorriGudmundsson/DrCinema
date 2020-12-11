@@ -11,7 +11,6 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     color: '#d0e4f5',
     flexDirection: 'column',
-    //margin: 8,
   },
   thumbnailText: {
     fontSize: 16,
@@ -19,7 +18,6 @@ export default StyleSheet.create({
     color: '#fff',
     fontStyle: 'italic',
     flexDirection: 'column',
-    //padding: 8,
   },
   movieThumbnailContainer: {
     flexDirection: 'row',

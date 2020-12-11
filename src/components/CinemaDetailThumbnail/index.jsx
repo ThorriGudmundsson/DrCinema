@@ -2,9 +2,7 @@ import React from 'react';
 import {
   Text, View, TouchableOpacity, Linking,
 } from 'react-native';
-import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
-import styles from './styles';
 
 const CinemaDetailThumbnail = ({
   id, name, description, address, phone, website,

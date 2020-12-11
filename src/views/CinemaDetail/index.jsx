@@ -36,9 +36,7 @@ class CinemaDetail extends React.Component {
 
   render() {
     const { cinema, cinemaMovies, cinemaDescription } = this.state;
-    console.log(cinema)
     return (
-      // <ScrollView>
       <View style={{ flex: 1 }}>
         <Text style={styles.nameText}>{cinema.name}</Text>
         <Text style={styles.descriptionStyle}>{cinemaDescription}</Text>

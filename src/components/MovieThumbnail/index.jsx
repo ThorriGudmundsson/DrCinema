@@ -1,9 +1,8 @@
 import React from 'react';
 import {
-  Text, View, TouchableOpacity, Linking, FlatList, Image
-,} from 'react-native';
+  Text, View, TouchableOpacity, FlatList, Image,
+} from 'react-native';
 import { withNavigation } from 'react-navigation';
-// import PropTypes from 'prop-types';
 import styles from './styles';
 
 const MovieThumbnail = ({
@@ -17,7 +16,7 @@ const MovieThumbnail = ({
     })}
   >
     <View style={styles.movieThumbnailContainer}>
-    <Image
+      <Image
         style={styles.image}
         resizeMode="cover"
         source={{ uri: poster }}
@@ -42,14 +41,5 @@ const MovieThumbnail = ({
     </View>
   </TouchableOpacity>
 );
-
-// CinemaThumbnail.propTypes = {
-//   id: PropTypes.number.isRequired,
-//   name: PropTypes.string.isRequired,
-//   website: PropTypes.string.isRequired,
-//   navigation: PropTypes.shape({
-//     navigate: PropTypes.func.isRequired,
-//   }).isRequired,
-// };
 
 export default withNavigation(MovieThumbnail);
