@@ -36,7 +36,7 @@ const UpcomingMovieThumbnail = ({
                 style={styles.marker}
               >
                 <Ionicons name="ios-film" style={styles.icon} />
-                <Text style={styles.markertext}>Skoða kítlu</Text>
+                <Text style={styles.markertext}></Text>
               </View>
             )
             : <></>

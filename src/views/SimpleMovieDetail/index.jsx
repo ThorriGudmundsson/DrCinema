@@ -8,7 +8,6 @@ import styles from './style';
 import Hamburger from '../../components/Hamburger';
 import MovieDetails from '../../components/MovieDetails';
 import * as movieService from '../../services/movieService';
-import * as upcomingService from '../../services/upcomingMoviesService';
 
 class SimpleMovieDetail extends React.Component {
   constructor(props) {
@@ -21,12 +20,8 @@ class SimpleMovieDetail extends React.Component {
   }
 
   async componentDidMount() {
-    let trailerId = false;
     const { upcomingMovies } = this.props;
     const movie = await movieService.getMovieByMongoId(upcomingMovies, this.props.navigation.state.params.mongoId);
-  /*  if (this.props.navigation.state.params.trailer) {
-      trailerId = await upcomingService.getYoutubeIDFromURL(this.props.navigation.state.params.trailer);
-    }*/
 
     this.setState({
       movie,
