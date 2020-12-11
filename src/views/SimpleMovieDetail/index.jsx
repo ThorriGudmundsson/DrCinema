@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  View, Text
+  View
 } from 'react-native';
 // import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
 import Hamburger from '../../components/Hamburger';
 import MovieDetails from '../../components/MovieDetails';
-import MovieTickets from '../../components/MovieTickets';
+// import MovieTickets from '../../components/MovieTickets';
 import * as movieService from '../../services/movieService';
 
 class SimpleMovieDetail extends React.Component {
@@ -14,28 +14,18 @@ class SimpleMovieDetail extends React.Component {
     super(props);
     this.state = {
       movie: {},
-      //cinema: {},
       release: '',
     };
   }
 
   async componentDidMount() {
-    const { movies, cinema, release } = this.props;
-    console.log(this.props.navigation.state.params.mongoId);
-    const movie = await movieService.getMovieByMongoId(movies, this.props.navigation.state.params.mongoId);
+    const { upcomingMovies } = this.props;
+    const movie = await movieService.getMovieByMongoId(upcomingMovies, this.props.navigation.state.params.mongoId);
 
-
-
-
-    //const showSchedule = await movieService.getMovieShowsInCinema(movie, cinema);
-    //
     this.setState({
       movie,
       release: this.props.navigation.state.params.release,
-      //cinema,
-      //showSchedule,
     });
-    //console.log(this.props.navigation.state.params.release);
   }
 
   render() {
@@ -44,7 +34,6 @@ class SimpleMovieDetail extends React.Component {
     return (
       <View style={{ flex: 1 }}>
         <Hamburger navigation={this.props.navigation} />
-
         <MovieDetails
           title={movie.title}
           poster={movie.poster}
@@ -54,12 +43,11 @@ class SimpleMovieDetail extends React.Component {
           genres={movie.genres}
           release={release}
         />
-
       </View>
     );
   }
 }
 
-const mapStateToProps = ({ movies, cinema }) => ({ movies, cinema });
+const mapStateToProps = ({ upcomingMovies }) => ({ upcomingMovies });
 
 export default connect(mapStateToProps)(SimpleMovieDetail);
