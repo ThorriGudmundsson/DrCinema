@@ -5,7 +5,7 @@ import {
 import styles from './style';
 
 const MovieDetails = ({
-  title, poster, plot, durationMinutes, year, genres, release
+  title, poster, plot, durationMinutes, year, genres, release,
 }) => (
   <View style={styles.container}>
     <Text style={styles.movieTitle}>{title}</Text>

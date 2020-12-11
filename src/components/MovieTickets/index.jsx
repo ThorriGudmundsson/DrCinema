@@ -1,11 +1,10 @@
 import React from 'react';
 import {
-  View, Text, FlatList, Linking, TouchableOpacity
+  View, Text, FlatList, Linking, TouchableOpacity,
 } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
 import styles from './style';
-
 
 const MovieTickets = ({
   schedule, cinema,
@@ -34,7 +33,6 @@ const MovieTickets = ({
               {time.replace(/ *\([^)]*\) */g, '').replace('.', ':')}
             </Text>
           </TouchableOpacity>
-
         )}
         keyExtractor={(schedule) => schedule.time}
       />

@@ -1,4 +1,3 @@
-// import * as movieService from '../services/movieService';
 import * as upcomingMoviesService from '../services/upcomingMoviesService';
 import * as constants from '../constants';
 

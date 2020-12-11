@@ -29,16 +29,4 @@ const MovieList = ({ movies, cinemaId }) => (
   </View>
 );
 
-// MovieList.propTypes = {
-//   cinemas: PropTypes.arrayOf(PropTypes.shape({
-//     id: PropTypes.number.isRequired,
-//     name: PropTypes.string.isRequired,
-//     phone: PropTypes.string,
-//     website: PropTypes.string,
-//     description: PropTypes.string,
-//     city: PropTypes.string,
-//     address: PropTypes.string,
-//   })).isRequired,
-// };
-
 export default MovieList;
