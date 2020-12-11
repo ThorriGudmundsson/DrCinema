@@ -5,6 +5,7 @@ import {
 import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
 import { Ionicons } from '@expo/vector-icons';
+import { Video } from 'expo-av';
 import styles from './styles';
 
 const UpcomingMovieThumbnail = ({
@@ -42,6 +43,20 @@ const UpcomingMovieThumbnail = ({
             )
             : <></>
         }
+        {/* {
+          trailer
+            ? (
+              <TouchableOpacity
+                visible={false}
+                style={styles.innerButtom}
+                onPress={() => { Linking.openURL(trailer); }}
+              >
+                <Ionicons name="ios-film" style={styles.icon} />
+                <Text style={styles.thumbnailText}>Skoða kítlu</Text>
+              </TouchableOpacity>
+            )
+            : <></>
+        } */}
       </View>
 
     </View>

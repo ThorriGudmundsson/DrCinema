@@ -35,17 +35,15 @@ class UpcomingMovies extends React.Component {
       });
     });
 
-    // do this here becaus of sort not a funtion error in parameters
+    // Do this here because of sort not a funtion error in parameters
     await cleanedUpcomingMovies.sort((a, b) => b.release.localeCompare(a.release));
     this.setState({
       upcomingMovies: cleanedUpcomingMovies,
     });
-    // console.log(upcomingMovies[0].trailer);
   }
 
   render() {
     const { upcomingMovies } = this.state;
-    // console.log(testsome['release-dateIS'])
     return (
       <View>
         <UpcomingMoviesList

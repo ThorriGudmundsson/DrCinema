@@ -1,12 +1,10 @@
 import React from 'react';
 import {
-  View
+  View,
 } from 'react-native';
-// import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
 import Hamburger from '../../components/Hamburger';
 import MovieDetails from '../../components/MovieDetails';
-// import MovieTickets from '../../components/MovieTickets';
 import * as movieService from '../../services/movieService';
 
 class SimpleMovieDetail extends React.Component {
