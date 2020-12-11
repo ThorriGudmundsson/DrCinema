@@ -36,23 +36,22 @@ class CinemaDetail extends React.Component {
 
   render() {
     const { cinema, cinemaMovies, cinemaDescription } = this.state;
+    console.log(cinema)
     return (
       // <ScrollView>
       <View style={{ flex: 1 }}>
         <Text style={styles.nameText}>{cinema.name}</Text>
         <Text style={styles.descriptionStyle}>{cinemaDescription}</Text>
-        <Text>{cinema.address}</Text>
-
         <MovieList
           movies={cinemaMovies}
           cinemaId={cinema.id}
         />
-        <View style={{ padding: 10 }}>
+        <View style={styles.descriptionStyle}>
+                <Text>{cinema['address\t']}{' '}{cinema.city}</Text>
           <Text>
-            Sími:
-            {cinema.phone}
-          </Text>
-          <Text style={styles.websiteStyle} onPress={() => { Linking.openURL(`https://${cinema.website}`); }}>{cinema.website}</Text>
+            Sími:{' '}{cinema.phone}{' '}
+            <Text style={styles.websiteStyle} onPress={() => { Linking.openURL(`https://${cinema.website}`); }}>{cinema.website}</Text>
+              </Text>
         </View>
         <Hamburger navigation={this.props.navigation} />
       </View>
