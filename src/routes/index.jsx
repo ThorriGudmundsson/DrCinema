@@ -30,7 +30,7 @@ const StackNavigator = createStackNavigator({
         backgroundColor: '#333',
 
       },
-      headerTintColor: '#d0e4f5',
+      headerTintColor: '#ffff',
       headerTitleStyle: {
         fontWeight: 'normal',
       },
