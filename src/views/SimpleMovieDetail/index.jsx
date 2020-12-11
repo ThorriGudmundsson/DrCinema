@@ -21,8 +21,12 @@ class SimpleMovieDetail extends React.Component {
 
   async componentDidMount() {
     const { movies, cinema, release } = this.props;
-    console.log(this.props.navigation.state.params.mongoId)
+    console.log(this.props.navigation.state.params.mongoId);
     const movie = await movieService.getMovieByMongoId(movies, this.props.navigation.state.params.mongoId);
+
+
+
+
     //const showSchedule = await movieService.getMovieShowsInCinema(movie, cinema);
     //
     this.setState({
@@ -39,10 +43,7 @@ class SimpleMovieDetail extends React.Component {
 
     return (
       <View style={{ flex: 1 }}>
-        <Hamburger
-          navigation={this.props.navigation}
-          themecolor="#ccc"
-        />
+        <Hamburger navigation={this.props.navigation} />
 
         <MovieDetails
           title={movie.title}

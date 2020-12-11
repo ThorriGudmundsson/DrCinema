@@ -4,7 +4,11 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { Ionicons } from '@expo/vector-icons';
+import { connect } from 'react-redux';
+//import { storeAllMovies } from '../../actions/movieActions';
 import styles from './styles';
+
+
 
 class Hamburger extends React.Component {
   constructor(props) {
@@ -14,6 +18,18 @@ class Hamburger extends React.Component {
       menuIsOpen: false,
       navigate: props.navigation.navigate,
     };
+  }
+
+  christmas() {
+    const rn = this.props.navigation.state.routeName;
+    if (rn === 'CinemaDetail' || rn === 'MovieDetail') {
+      this.state.navigate('SimpleMovieDetail', { mongoId: '5fd25829034403e09d26045b' });}
+    else if (rn === 'UpcomingMovies') {
+      this.state.navigate('SimpleMovieDetail', { mongoId: '5fd22904034403e09d1f4199' });}
+    else {
+      alert('hohoho')
+    }
+    //this.state.navigate('SimpleMovieDetail', { mongoId: '5fd25829034403e09d26045b' });
   }
 
   render() {
@@ -67,7 +83,8 @@ class Hamburger extends React.Component {
             <TouchableOpacity
               activeOpacity={0.9}
               style={styles.menuButton}
-              onPress={() => {this.setState({ menuIsOpen: false }); alert('HoHoHoo');}}
+              onPress={() => { this.setState({ menuIsOpen: false }); this.christmas(); }}
+
             >
               <Text> Það eru jólin </Text>
             </TouchableOpacity>
