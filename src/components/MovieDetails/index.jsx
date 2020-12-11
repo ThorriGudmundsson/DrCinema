@@ -8,7 +8,7 @@ const MovieDetails = ({
   title, poster, plot, durationMinutes, year, genres, release
 }) => (
   <View style={styles.container}>
-    <Text style={styles.movieTitle}>{title} ({year})</Text>
+    <Text style={styles.movieTitle}>{title}</Text>
     <Image source={{ uri: poster }} style={styles.poster} />
     <Text style={styles.movieDurationText}>Útgáfuár: {year}
     </Text>
