@@ -16,3 +16,11 @@ export const getCinemaById = async (id, cinemas) => {
   }
   return undefined;
 };
+
+export const cleanCinemaDescription = async (description) => {
+  console.log(description);
+  if (description === null) { return ''; }
+  const cleanedDescription = await description.replace(/<\/?[^>]+(>|$)/g, '');
+  // console.log(cleanedDescription);
+  return cleanedDescription;
+};
