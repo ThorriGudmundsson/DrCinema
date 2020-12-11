@@ -21,7 +21,8 @@ class Hamburger extends React.Component {
   }
 
   christmas() {
-    const rn = this.props.navigation.state.routeName;
+    alert('hohoho')
+    /*const rn = this.props.navigation.state.routeName;
     if (rn === 'CinemaDetail' || rn === 'MovieDetail') {
       this.state.navigate('SimpleMovieDetail', { mongoId: '5fd25829034403e09d26045b' });}
     else if (rn === 'UpcomingMovies') {
@@ -29,7 +30,7 @@ class Hamburger extends React.Component {
     else {
       alert('hohoho')
     }
-    //this.state.navigate('SimpleMovieDetail', { mongoId: '5fd25829034403e09d26045b' });
+    //this.state.navigate('SimpleMovieDetail', { mongoId: '5fd25829034403e09d26045b' });*/
   }
 
   render() {
