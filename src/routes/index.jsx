@@ -15,7 +15,7 @@ const StackNavigator = createStackNavigator({
         backgroundColor: '#333',
 
       },
-      headerTintColor: '#7DFDFE',
+      headerTintColor: '#ffff',
       headerTitleStyle: {
         fontWeight: 'normal',
       },
@@ -27,7 +27,7 @@ const StackNavigator = createStackNavigator({
     navigationOptions: {
       title: 'Komdu í bío',
       headerStyle: {
-        backgroundColor: '#121875',
+        backgroundColor: '#333',
 
       },
       headerTintColor: '#d0e4f5',
@@ -44,7 +44,7 @@ const StackNavigator = createStackNavigator({
       headerStyle: {
         backgroundColor: '#333',
       },
-      headerTintColor: '#7DFDFE',
+      headerTintColor: '#ffff',
       headerTitleStyle: {
         fontWeight: 'normal',
       },
