@@ -19,9 +19,7 @@ export default StyleSheet.create({
     fontWeight: 'normal',
     color: '#262018',
     flexDirection: 'column',
-
     marginRight: 8,
-
   },
   ThumbnailContainer: {
     flexDirection: 'row',
@@ -46,16 +44,16 @@ export default StyleSheet.create({
   },
   marker: {
     position: 'absolute',
-    bottom: -8,
+    bottom: 0,
+    right: 8,
     fontSize: 16,
     color: '#8a755b',
     fontWeight: 'normal',
-    flexDirection: 'row',
-    alignSelf: 'flex-end',
     backgroundColor: '#fff',
-    padding: 10,
-    borderTopLeftRadius: 16,
-    borderTopRightRadius: 16,
+    paddingTop: 8,
+    paddingHorizontal: 20,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
   },
   markertext: {
     fontSize: 14,
@@ -67,8 +65,6 @@ export default StyleSheet.create({
     fontWeight: 'normal',
     color: '#8a755b',
     flexDirection: 'column',
-    marginTop: 3,
-    marginRight: 8,
 
   },
 

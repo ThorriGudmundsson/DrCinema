@@ -29,20 +29,18 @@ const UpcomingMovieThumbnail = ({
       <View>
         <Text style={styles.thumbnailName}>{title}</Text>
         <Text style={styles.thumbnailText}>Kemur í bíó: {release}</Text>
-        {
-          trailer
-            ? (
-              <View
-                style={styles.marker}
-              >
-                <Ionicons name="ios-film" style={styles.icon} />
-                <Text style={styles.markertext}></Text>
-              </View>
-            )
-            : <></>
-        }
       </View>
-
+      {
+        trailer
+          ? (
+            <View
+              style={styles.marker}
+            >
+              <Ionicons name="ios-film" style={styles.icon} />
+            </View>
+          )
+          : <></>
+      }
     </View>
   </TouchableOpacity>
 );
