@@ -10,17 +10,17 @@ const MovieDetails = ({
   <View style={styles.container}>
     <Text style={styles.movieTitle}>{title} ({year})</Text>
     <Image source={{ uri: poster }} style={styles.poster} />
+    <Text style={styles.movieDurationText}>Útgáfuár: {year}
+    </Text>
     {
       durationMinutes
-      ?
-      <Text style={styles.movieDurationText}>Lengd: {durationMinutes} mínútur</Text>
-      :
-      <Text style={styles.movieDurationText}>Kemur í bío: {release} </Text>
+        ? <Text style={styles.movieDurationText}>Lengd: {durationMinutes} mínútur</Text>
+        : <Text style={styles.movieDurationText}>Kemur í bío: {release} </Text>
     }
-
     <View>
       <FlatList
-        numColumns={1}
+        contentContainerStyle={styles.FlatListContainer}
+        numColumns={3}
         data={genres}
         renderItem={({
           item: {

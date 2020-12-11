@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View,
+  View, ScrollView,
 } from 'react-native';
 import { connect } from 'react-redux';
 import Hamburger from '../../components/Hamburger';
@@ -37,22 +37,21 @@ class MovieDetail extends React.Component {
     console.log(schedule);
     return (
       <View style={{ flex: 1 }}>
-        <Hamburger
-          navigation={this.props.navigation}
-          themecolor="#ccc"
-        />
-        <MovieDetails
-          title={movie.title}
-          poster={movie.poster}
-          plot={movie.plot}
-          durationMinutes={movie.durationMinutes}
-          year={movie.year}
-          genres={movie.genres}
-        />
-        <MovieTickets
-          schedule={schedule}
-          cinema={cinema}
-        />
+        <Hamburger navigation={this.props.navigation} />
+        <ScrollView>
+          <MovieDetails
+            title={movie.title}
+            poster={movie.poster}
+            plot={movie.plot}
+            durationMinutes={movie.durationMinutes}
+            year={movie.year}
+            genres={movie.genres}
+          />
+          <MovieTickets
+            schedule={schedule}
+            cinema={cinema}
+          />
+        </ScrollView>
       </View>
     );
   }

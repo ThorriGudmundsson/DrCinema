@@ -5,7 +5,7 @@ export default StyleSheet.create({
     paddingLeft: 10,
     paddingTop: 1,
     paddingRight: 10,
-    flex: 1,
+    // flex: 1,
   },
   poster: {
     alignSelf: 'center',
@@ -27,7 +27,7 @@ export default StyleSheet.create({
     textAlign: 'left',
     fontSize: 16,
     fontWeight: 'bold',
-    paddingBottom: 6,
+    marginRight: 10,
   },
   movieDurationText: {
     alignSelf: 'center',
@@ -38,5 +38,11 @@ export default StyleSheet.create({
     alignSelf: 'center',
     fontSize: 16,
     fontStyle: 'italic',
+  },
+  FlatListContainer: {
+
+    backgroundColor: '#ccc',
+    padding: 6,
+    marginVertical: 10,
   },
 });

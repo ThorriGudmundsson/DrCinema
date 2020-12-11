@@ -12,7 +12,7 @@ const StackNavigator = createStackNavigator({
     navigationOptions: {
       title: 'Kvikmyndahúsin',
       headerStyle: {
-        backgroundColor: '#800517',
+        backgroundColor: '#333',
 
       },
       headerTintColor: '#7DFDFE',
