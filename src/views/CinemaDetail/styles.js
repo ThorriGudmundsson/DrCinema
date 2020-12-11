@@ -12,8 +12,8 @@ export default StyleSheet.create({
     textDecorationLine: 'underline',
   },
   descriptionStyle: {
-    margin: 10,
-    textAlign: 'center',
+    padding: 10,
+    textAlign: 'justify',
     fontSize: 15,
   },
 });
