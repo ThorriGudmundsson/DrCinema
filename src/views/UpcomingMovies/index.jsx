@@ -1,11 +1,9 @@
 import React from 'react';
 import {
-  View, Text,
+  View,
 } from 'react-native';
-// import { NavigationEvents } from 'react-navigation';
 import { connect } from 'react-redux';
-import { storeUpcomingMovies } from '../../actions/movieActions';
-// import { getAllUpcomingMovies } from '../../services/upcomingMoviesService';
+import { storeUpcomingMovies } from '../../actions/upcomingMoviesActions';
 import UpcomingMoviesList from '../../components/UpcomingMoviesList';
 import Hamburger from '../../components/Hamburger';
 
@@ -20,31 +18,29 @@ class UpcomingMovies extends React.Component {
   async componentDidMount() {
     const { storeUpcomingMovies } = this.props;
     await storeUpcomingMovies();
-    const { movies } = this.props;
-    const upcomingMovies = [];
-    await movies.forEach((item) => {
+    const { upcomingMovies } = this.props;
+    const cleanedUpcomingMovies = [];
+    await upcomingMovies.forEach((item) => {
       let trailer = false;
       if (item.trailers[0] && item.trailers[0].results[0]) {
         trailer = item.trailers[0].results[0].url;
       }
 
-      //console.log(item.trailers[0]);
-      upcomingMovies.push({
+      cleanedUpcomingMovies.push({
         mongoId: item['_id'],
         title: item.title,
         poster: item.poster,
         release: item['release-dateIS'],
         trailer: trailer,
-
       });
     });
 
     // do this here becaus of sort not a funtion error in parameters
-    await upcomingMovies.sort((a, b) => b.release.localeCompare(a.release));
+    await cleanedUpcomingMovies.sort((a, b) => b.release.localeCompare(a.release));
     this.setState({
-      upcomingMovies,
+      upcomingMovies: cleanedUpcomingMovies,
     });
-    console.log(upcomingMovies[0].trailer);
+    // console.log(upcomingMovies[0].trailer);
   }
 
   render() {
@@ -63,6 +59,6 @@ class UpcomingMovies extends React.Component {
   }
 }
 
-const mapStateToProps = ({ movies }) => ({ movies });
+const mapStateToProps = ({ upcomingMovies }) => ({ upcomingMovies });
 
 export default connect(mapStateToProps, { storeUpcomingMovies })(UpcomingMovies);

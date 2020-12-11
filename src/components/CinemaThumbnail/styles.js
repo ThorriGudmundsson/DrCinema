@@ -7,7 +7,7 @@ export default StyleSheet.create({
     margin: 10,
   },
   thumbnailName: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#ffff',
     flexDirection: 'column',
@@ -25,9 +25,9 @@ export default StyleSheet.create({
     flexDirection: 'row',
     width: 'auto',
     height: 'auto',
-    backgroundColor: '#121875',
+    backgroundColor: '#800517',
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: 'white',
     margin: 4,
   },
 });

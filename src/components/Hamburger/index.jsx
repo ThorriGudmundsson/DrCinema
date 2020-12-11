@@ -38,9 +38,6 @@ class Hamburger extends React.Component {
       <View
         style={styles.HamburgerContainer}
       >
-      {/*<View
-        style={styles.HamburgerContainerIOS}
-      >*/}
         <TouchableOpacity
           activeOpacity={0.7}
           onPress={() => this.setState({ menuIsOpen: !menuIsOpen })}

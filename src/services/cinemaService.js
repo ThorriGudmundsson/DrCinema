@@ -16,3 +16,9 @@ export const getCinemaById = async (id, cinemas) => {
   }
   return undefined;
 };
+
+export const cleanCinemaDescription = async (description) => {
+  if (description === null) { return ''; }
+  const cleanedDescription = await description.replace(/<\/?[^>]+(>|$)/g, '');
+  return cleanedDescription;
+};

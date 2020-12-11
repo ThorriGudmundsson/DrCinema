@@ -16,6 +16,7 @@ class CinemaDetail extends React.Component {
     this.state = {
       cinema: {},
       cinemaMovies: [],
+      cinemaDescription: '',
     };
   }
 
@@ -25,31 +26,32 @@ class CinemaDetail extends React.Component {
     const { movies, cinemas } = this.props;
     const cinema = await cinemaService.getCinemaById(this.props.navigation.state.params.id, cinemas);
     const cinemaMovies = await movieService.getAllMoviesByCinemaId(cinema.id, movies);
+    const cinemaDescription = await cinemaService.cleanCinemaDescription(cinema.description);
     this.setState({
       cinema,
       cinemaMovies,
+      cinemaDescription,
     });
   }
 
   render() {
-    const { cinema, cinemaMovies } = this.state;
+    const { cinema, cinemaMovies, cinemaDescription } = this.state;
+    console.log(cinema)
     return (
       // <ScrollView>
       <View style={{ flex: 1 }}>
         <Text style={styles.nameText}>{cinema.name}</Text>
-        <Text style={styles.descriptionStyle}>{cinema.description}</Text>
-        <Text>{cinema.address}</Text>
-
+        <Text style={styles.descriptionStyle}>{cinemaDescription}</Text>
         <MovieList
           movies={cinemaMovies}
           cinemaId={cinema.id}
         />
-        <View style={{ padding: 10 }}>
+        <View style={styles.descriptionStyle}>
+                <Text>{cinema['address\t']}{' '}{cinema.city}</Text>
           <Text>
-            Sími:
-            {cinema.phone}
-          </Text>
-          <Text style={styles.websiteStyle} onPress={() => { Linking.openURL(`https://${cinema.website}`); }}>{cinema.website}</Text>
+            Sími:{' '}{cinema.phone}{' '}
+            <Text style={styles.websiteStyle} onPress={() => { Linking.openURL(`https://${cinema.website}`); }}>{cinema.website}</Text>
+              </Text>
         </View>
         <Hamburger navigation={this.props.navigation} />
       </View>

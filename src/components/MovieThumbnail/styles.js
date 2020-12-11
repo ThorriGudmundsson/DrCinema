@@ -7,7 +7,7 @@ export default StyleSheet.create({
     marginRight: 10,
   },
   thumbnailName: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#d0e4f5',
     flexDirection: 'column',

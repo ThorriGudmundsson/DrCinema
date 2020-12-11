@@ -12,10 +12,10 @@ const StackNavigator = createStackNavigator({
     navigationOptions: {
       title: 'Kvikmyndahúsin',
       headerStyle: {
-        backgroundColor: '#333',
+        backgroundColor: '#800517',
 
       },
-      headerTintColor: '#ffff',
+      headerTintColor: '#7DFDFE',
       headerTitleStyle: {
         fontWeight: 'normal',
       },
@@ -27,10 +27,10 @@ const StackNavigator = createStackNavigator({
     navigationOptions: {
       title: 'Komdu í bío',
       headerStyle: {
-        backgroundColor: '#333',
+        backgroundColor: '#121875',
 
       },
-      headerTintColor: '#ffff',
+      headerTintColor: '#d0e4f5',
       headerTitleStyle: {
         fontWeight: 'normal',
       },
@@ -44,7 +44,7 @@ const StackNavigator = createStackNavigator({
       headerStyle: {
         backgroundColor: '#333',
       },
-      headerTintColor: '#ffff',
+      headerTintColor: '#7DFDFE',
       headerTitleStyle: {
         fontWeight: 'normal',
       },
