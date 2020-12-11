@@ -6,7 +6,7 @@ import CinemaThumbnail from '../CinemaThumbnail';
 
 
 const CinemaList = ({ cinemas }) => (
-  <View style={{ backgroundColor: '#ffff' }}>
+  <View style={{ backgroundColor: '#3D3C3A' }}>
     <FlatList
       numColumns={1}
       data={cinemas.sort((a, b) => a.name.localeCompare(b.name, 'is'))}
