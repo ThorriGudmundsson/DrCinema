@@ -33,11 +33,10 @@ const UpcomingMovieThumbnail = ({
           trailer
             ? (
               <View
-                visible={false}
-                style={styles.innerButtom}
+                style={styles.marker}
               >
                 <Ionicons name="ios-film" style={styles.icon} />
-                <Text style={styles.thumbnailText}>Hefur kítlu</Text>
+                <Text style={styles.markertext}>Skoða kítlu</Text>
               </View>
             )
             : <></>

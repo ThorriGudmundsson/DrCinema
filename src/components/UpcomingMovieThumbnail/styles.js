@@ -19,18 +19,10 @@ export default StyleSheet.create({
     fontWeight: 'normal',
     color: '#262018',
     flexDirection: 'column',
-    marginRight: 8,
-  },
-  icon: {
-    fontSize: 16,
-    fontWeight: 'normal',
-    color: '#262018',
-    flexDirection: 'column',
-    marginTop: 3,
-    marginLeft: 3,
-    marginRight: 8,
-  },
 
+    marginRight: 8,
+
+  },
   ThumbnailContainer: {
     flexDirection: 'row',
     width: 'auto',
@@ -46,9 +38,38 @@ export default StyleSheet.create({
     fontWeight: 'normal',
     color: '#262018',
     flexDirection: 'row',
+    alignSelf: 'flex-end',
+    backgroundColor: '#fff',
     padding: 10,
     marginTop: 16,
     borderRadius: 16,
+  },
+  marker: {
+    position: 'absolute',
+    bottom: -8,
+    fontSize: 16,
+    color: '#8a755b',
+    fontWeight: 'normal',
+    flexDirection: 'row',
+    alignSelf: 'flex-end',
+    backgroundColor: '#fff',
+    padding: 10,
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
+  },
+  markertext: {
+    fontSize: 14,
+    fontWeight: 'normal',
+    color: '#8a755b',
+  },
+  icon: {
+    fontSize: 16,
+    fontWeight: 'normal',
+    color: '#8a755b',
+    flexDirection: 'column',
+    marginTop: 3,
+    marginRight: 8,
+
   },
 
 });
