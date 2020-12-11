@@ -24,7 +24,6 @@ const UpcomingMoviesList = ({ upcomingMovies }) => (
       )}
       keyExtractor={(upcomingMovie) => upcomingMovie['_id']}
     />
-
   </View>
 );
 

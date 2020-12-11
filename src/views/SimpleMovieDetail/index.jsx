@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-  View, ScrollView,
+  View, ScrollView, Text,
 } from 'react-native';
-import styles from './style';
-import YoutubePlayer from "react-native-youtube-iframe";
+import YoutubePlayer from 'react-native-youtube-iframe';
 import { connect } from 'react-redux';
+import styles from './style';
 import Hamburger from '../../components/Hamburger';
 import MovieDetails from '../../components/MovieDetails';
 import * as movieService from '../../services/movieService';
@@ -21,9 +21,13 @@ class SimpleMovieDetail extends React.Component {
   }
 
   async componentDidMount() {
+    let trailerId = false;
     const { upcomingMovies } = this.props;
+    console.log(this.props.navigation.state.params.trailer);
     const movie = await movieService.getMovieByMongoId(upcomingMovies, this.props.navigation.state.params.mongoId);
-    const trailerId = await upcomingService.getYoutubeIDFromURL(this.props.navigation.state.params.trailer);
+    if (this.props.navigation.state.params.trailer) {
+      trailerId = await upcomingService.getYoutubeIDFromURL(this.props.navigation.state.params.trailer);
+    }
 
     this.setState({
       movie,
@@ -34,7 +38,6 @@ class SimpleMovieDetail extends React.Component {
 
   render() {
     const { movie, release, trailerId } = this.state;
-    console.log(trailerId);
     return (
       <ScrollView style={{ flex: 1 }}>
         <Hamburger navigation={this.props.navigation} />
