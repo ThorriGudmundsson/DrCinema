@@ -18,7 +18,9 @@ class Hamburger extends React.Component {
   }
 
   christmas() {
-    alert('hohoho')
+    alert(' *** hohoho Gleðileg Jól ***' )
+
+    //this.state.navigate('SimpleMovieDetail', { mongoId: '5fd37d1c034403e09d4fd5ac' });
     // const rn = this.props.navigation.state.routeName;
     // if (rn === 'CinemaDetail' || rn === 'MovieDetail') {
     //   this.state.navigate('SimpleMovieDetail', { mongoId: '5fd25829034403e09d26045b' });}
@@ -27,7 +29,7 @@ class Hamburger extends React.Component {
     // else {
     //   alert('hohoho')
     // }
-    // //this.state.navigate('SimpleMovieDetail', { mongoId: '5fd25829034403e09d26045b' });
+    //this.state.navigate('SimpleMovieDetail', { mongoId: '5fd25829034403e09d26045b' });
   }
 
   render() {
