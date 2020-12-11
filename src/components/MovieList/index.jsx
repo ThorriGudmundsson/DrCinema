@@ -1,11 +1,7 @@
 import React from 'react';
-import { View, FlatList, ScrollView } from 'react-native';
-// import PropTypes from 'prop-types';
+import { View, FlatList } from 'react-native';
 import styles from './style';
 import MovieThumbnail from '../MovieThumbnail';
-// import {  } from '../../../App';
-// import {  } from '../CinemaThumbnail/index';
-// import {  } from '../../views/Cinemas/index';
 
 const MovieList = ({ movies, cinemaId }) => (
   <View style={styles.listContainer}>
