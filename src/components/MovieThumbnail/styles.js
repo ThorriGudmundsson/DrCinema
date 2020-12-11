@@ -2,24 +2,24 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   image: {
-    width: 70,
-    height: 70,
-    margin: 10,
+    width: 120,
+    height: 120,
+    marginRight: 10,
   },
   thumbnailName: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#ffff',
+    color: '#d0e4f5',
     flexDirection: 'column',
-    margin: 8,
+    //margin: 8,
   },
   thumbnailText: {
     fontSize: 16,
     fontWeight: 'normal',
-    color: '#ffff',
+    color: '#fff',
     fontStyle: 'italic',
     flexDirection: 'column',
-    padding: 8,
+    //padding: 8,
   },
   movieThumbnailContainer: {
     flexDirection: 'row',
@@ -27,7 +27,11 @@ export default StyleSheet.create({
     width: 'auto',
     backgroundColor: '#121875',
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: '#d0e4f5',
     margin: 4,
+    padding: 6,
+  },
+  textContainer: {
+    width: 220,
   },
 });

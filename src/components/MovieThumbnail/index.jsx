@@ -1,7 +1,7 @@
 import React from 'react';
 import {
-  Text, View, TouchableOpacity, Linking, FlatList,
-} from 'react-native';
+  Text, View, TouchableOpacity, Linking, FlatList, Image
+,} from 'react-native';
 import { withNavigation } from 'react-navigation';
 // import PropTypes from 'prop-types';
 import styles from './styles';
@@ -17,7 +17,12 @@ const MovieThumbnail = ({
     })}
   >
     <View style={styles.movieThumbnailContainer}>
-      <View>
+    <Image
+        style={styles.image}
+        resizeMode="cover"
+        source={{ uri: poster }}
+      />
+      <View style={styles.textContainer}>
         <Text style={styles.thumbnailName}>{title} ({year})</Text>
         <View>
           <FlatList

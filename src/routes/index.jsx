@@ -27,10 +27,10 @@ const StackNavigator = createStackNavigator({
     navigationOptions: {
       title: 'Komdu í bío',
       headerStyle: {
-        backgroundColor: '#333',
+        backgroundColor: '#121875',
 
       },
-      headerTintColor: '#7DFDFE',
+      headerTintColor: '#d0e4f5',
       headerTitleStyle: {
         fontWeight: 'normal',
       },
