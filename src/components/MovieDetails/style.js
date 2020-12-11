@@ -27,8 +27,7 @@ export default StyleSheet.create({
     textAlign: 'left',
     fontSize: 16,
     fontWeight: 'bold',
-    paddingBottom: 6,
-    marginRight: 4,
+    marginRight: 10,
   },
   movieDurationText: {
     alignSelf: 'center',
@@ -41,9 +40,9 @@ export default StyleSheet.create({
     fontStyle: 'italic',
   },
   FlatListContainer: {
-    flexDirection: 'row',
+
     backgroundColor: '#ccc',
-    flexWrap: 'wrap',
-    marginTop: 10,
+    padding: 6,
+    marginVertical: 10,
   },
 });

@@ -3,35 +3,33 @@ import {
   View, Text, FlatList, Linking, TouchableOpacity
 } from 'react-native';
 import { withNavigation } from 'react-navigation';
-import styles from './style';
 import { Ionicons } from '@expo/vector-icons';
+import styles from './style';
 
 const MovieTickets = ({
   schedule, cinema,
 }) => (
-  <View style={{ flex: 1 }}>
-    <Text style={styles.showTimeText}>Sýningatímar:</Text>
+  <View>
+    <Text style={styles.showTimeText}>{cinema.name} - Sýningatímar: </Text>
     <View>
       <FlatList
-        numColumns={4}
+        horizontal
         data={schedule}
         renderItem={({
           item: {
             time, purchase_url,
           },
         }) => (
-          <View>
-            <TouchableOpacity
-              visible={false}
-              style={styles.buttonStyle}
-              onPress={() => { Linking.openURL(`${purchase_url}`); }}
-            >
-              <Text style={{color: 'grey'}}>
-                <Ionicons name="ios-time" style={styles.icon} /> {' '}
-                {time.replace(/ *\([^)]*\) */g, '').replace('.', ':')}
-              </Text>
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            onPress={() => { Linking.openURL(`${purchase_url}`); }}
+          >
+            <Text style={{color: '#aaa'}}>
+              <Ionicons name="ios-time" style={styles.icon} /> {' '}
+              {time.replace(/ *\([^)]*\) */g, '').replace('.', ':')}
+            </Text>
+          </TouchableOpacity>
+
         )}
         keyExtractor={(schedule) => schedule.time}
       />

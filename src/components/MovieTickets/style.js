@@ -6,7 +6,9 @@ export default StyleSheet.create({
     textDecorationLine: 'underline',
   },
   showTimeText: {
+    marginTop: 10,
     fontSize: 18,
+    fontWeight: 'bold',
   },
   containerStyle: {
     height: 10,
@@ -23,4 +25,5 @@ export default StyleSheet.create({
     borderRadius: 10,
     marginTop: 5,
   },
+
 });
