@@ -1,13 +1,23 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 
 export default StyleSheet.create({
   HamburgerContainer: {
-    zIndex: 999, // put the menu on top and over the navigation
     position: 'absolute',
-    top: -65,
-    right: 0,
+    ...Platform.select({
+      ios: {
+        top: 0,
+        right: 10,
+        backgroundColor: '#000',
+        opacity: 0.75,
+        borderRadius: 25,
+      },
+      android: {
+        zIndex: 999, // put the menu on top and over the navigation
+        top: -65,
+        right: 0,
+      },
+    }),
   },
-
   HamburgerIcon: {
     padding: 20, // using this so clicable area are biggers
     fontSize: 30,
