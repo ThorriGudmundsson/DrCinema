@@ -23,7 +23,7 @@ class UpcomingMovies extends React.Component {
     await upcomingMovies.forEach((item) => {
       let trailer = false;
       if (item.trailers[0] && item.trailers[0].results[0]) {
-        trailer = true;
+        trailer = item.trailers[0].results[0].url;
       }
 
       cleanedUpcomingMovies.push({
