@@ -24,14 +24,14 @@ class SimpleMovieDetail extends React.Component {
     let trailerId = false;
     const { upcomingMovies } = this.props;
     const movie = await movieService.getMovieByMongoId(upcomingMovies, this.props.navigation.state.params.mongoId);
-    if (this.props.navigation.state.params.trailer) {
+  /*  if (this.props.navigation.state.params.trailer) {
       trailerId = await upcomingService.getYoutubeIDFromURL(this.props.navigation.state.params.trailer);
-    }
+    }*/
 
     this.setState({
       movie,
       release: this.props.navigation.state.params.release,
-      trailerId,
+      trailerId: this.props.navigation.state.params.trailer,
     });
   }
 
